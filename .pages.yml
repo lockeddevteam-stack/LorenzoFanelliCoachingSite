@@ -1,0 +1,118 @@
+media:
+  input: images
+  output: /images
+
+content:
+  - name: site
+    label: Website
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: prices
+        label: Prices
+        type: object
+        fields:
+          - { name: consult, label: Consultation price, type: string, description: "Shown on the booking page. Example: $200" }
+          - { name: coaching, label: Coaching price, type: string, description: "Example: $1,200 a month, or Monthly, on request" }
+          - { name: private, label: Private (label), type: string }
+          - { name: privateRange, label: Private price range, type: string, description: "Example: $10,000 to $20,000" }
+          - { name: showPrivateRange, label: Show the Private range on the site, type: boolean }
+
+      - name: packages
+        label: Package cards
+        type: object
+        fields:
+          - name: consult
+            label: Consult
+            type: object
+            fields:
+              - { name: line, label: One line on the card, type: string }
+              - { name: investment, label: Investment line, type: string }
+          - name: coaching
+            label: Coaching
+            type: object
+            fields:
+              - { name: line, label: One line on the card, type: string }
+              - { name: investment, label: Investment line, type: string }
+          - name: private
+            label: Private
+            type: object
+            fields:
+              - { name: line, label: One line on the card, type: string }
+
+      - name: testimonials
+        label: Client words
+        description: Only add quotes you have permission to use. Nothing shows while this is empty.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.who}"
+        fields:
+          - { name: quote, label: Quote, type: text }
+          - { name: who, label: Who, type: string, description: "Example: Founder, 58, London" }
+
+      - name: thisIsNot
+        label: "\"This is not\" lines"
+        type: string
+        list: true
+
+      - { name: thisIsNotClose, label: "Closing line under \"This is not\"", type: string }
+
+      - name: stages
+        label: Method stages
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.title}"
+        fields:
+          - { name: title, label: Stage, type: string }
+          - { name: text, label: Description, type: text }
+
+      - name: faq
+        label: FAQ
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.question}"
+        fields:
+          - { name: question, label: Question, type: string }
+          - { name: answer, label: Answer, type: text }
+
+      - name: credentials
+        label: Credentials
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.title}"
+        fields:
+          - { name: title, label: Title, type: string, description: "Example: MSc" }
+          - { name: subtitle, label: Subtitle, type: string, description: "Example: Nutrition" }
+
+      - name: contact
+        label: Contact
+        type: object
+        fields:
+          - { name: email, label: Email, type: string }
+          - { name: instagram, label: Instagram handle, type: string, description: "Without the @" }
+
+      - name: photos
+        label: Photos
+        description: Phone photos look best tall (1080 x 1920). Desktop photos look best wide (1600 x 1000).
+        type: object
+        fields:
+          - { name: hero_m, label: Home, top photo (phone), type: image }
+          - { name: hero_d, label: Home, top photo (desktop), type: image }
+          - { name: pool_m, label: Home, Private section (phone), type: image }
+          - { name: pool_w, label: Private photo (desktop and gallery), type: image }
+          - { name: pool_p, label: Private page, top photo (phone), type: image }
+          - { name: group_w, label: Group photo (home), type: image }
+          - { name: group_pan, label: Group photo (gallery, wide), type: image }
+          - { name: about, label: About photo, type: image }
+          - { name: coach, label: Closing photo, type: image }
+          - { name: white, label: Gallery, white tank, type: image }
+          - { name: back, label: Gallery, back shot, type: image }

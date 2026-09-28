@@ -1,0 +1,116 @@
+{
+  "prices": {
+    "consult": "$200",
+    "coaching": "Monthly, on request",
+    "private": "By application",
+    "privateRange": "$10,000 to $20,000",
+    "showPrivateRange": false
+  },
+  "packages": {
+    "consult": {
+      "line": "One hour. A clear plan for the next four weeks.",
+      "investment": "$200, paid once"
+    },
+    "coaching": {
+      "line": "Eight sessions a month. A plan that moves with you.",
+      "investment": "Monthly, confirmed after your consultation"
+    },
+    "private": {
+      "line": "10, 20 or 30 days at your home. The whole routine, rebuilt."
+    }
+  },
+  "contact": {
+    "email": "lal.lorenzofanelli@gmail.com",
+    "instagram": "lorefanecoach"
+  },
+  "thisIsNot": [
+    "This is not a 30-day transformation.",
+    "Not a diet.",
+    "Not a template with your name on it.",
+    "Not a PDF handed over and forgotten.",
+    "Not a plan written for someone else's life.",
+    "Not punishment.",
+    "Not a quick fix."
+  ],
+  "thisIsNotClose": "It is a routine built around a purpose, and kept.",
+  "stages": [
+    {
+      "title": "Purpose",
+      "text": "Why now, and why this. The goal behind the goal: the tour, the board, the surgery, the decade ahead."
+    },
+    {
+      "title": "Destination",
+      "text": "A clear target, defined together. How you want to feel, perform and look, and the markers that prove it."
+    },
+    {
+      "title": "Time",
+      "text": "The weeks available, the travel ahead, the season of life. The plan is built on the calendar you actually have."
+    },
+    {
+      "title": "Route",
+      "text": "Training, food, sleep and recovery, planned backwards from the destination and adjusted as life moves."
+    }
+  ],
+  "testimonials": [],
+  "faq": [
+    {
+      "question": "Do I need to live nearby?",
+      "answer": "No. Consultations and coaching run online, with in person sessions where location allows. Private immersions happen at your home, anywhere in the world."
+    },
+    {
+      "question": "Do you work with my doctors?",
+      "answer": "Yes. With your permission, the coach works alongside your doctors and specialists. Every Private immersion includes testing reviewed with a physician."
+    },
+    {
+      "question": "What happens between sessions?",
+      "answer": "An AI coach trained by Lorenzo answers day to day questions using your own plans. It is included in every plan, always labelled as AI, never gives medical or injury advice, and passes anything uncertain to the coach."
+    },
+    {
+      "question": "What if I travel a lot?",
+      "answer": "Tell the app where you are. Sessions switch to the equipment you have, and food guidance follows your calendar."
+    },
+    {
+      "question": "Where do I start?",
+      "answer": "With a one hour consultation. It is the first step for every plan, including coaching."
+    },
+    {
+      "question": "I was referred by a client.",
+      "answer": "Mention their name when you book and you will be offered a priority call."
+    },
+    {
+      "question": "How do payments work?",
+      "answer": "The consultation is paid once. Coaching is monthly and you can cancel before your next billing date. Private immersions are quoted after a call, with travel covered by the client."
+    }
+  ],
+  "credentials": [
+    {
+      "title": "MSc",
+      "subtitle": "Nutrition"
+    },
+    {
+      "title": "BSc",
+      "subtitle": "Sports sciences"
+    },
+    {
+      "title": "6+ years",
+      "subtitle": "Coaching"
+    },
+    {
+      "title": "Your doctors",
+      "subtitle": "Worked alongside"
+    }
+  ],
+  "photos": {
+    "hero_m": "images/hero_m.jpg",
+    "hero_d": "images/hero_d.jpg",
+    "about": "images/about.jpg",
+    "coach": "images/coach.jpg",
+    "white": "images/white.jpg",
+    "back": "images/back.jpg",
+    "pool_p": "images/pool_p.jpg",
+    "pool_m": "images/pool_m.jpg",
+    "pool_w": "images/pool_w.jpg",
+    "group_w": "images/group_w.jpg",
+    "group_pan": "images/group_pan.jpg"
+  }
+}

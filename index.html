@@ -1,0 +1,1397 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lorenzo Fanelli · Coaching and nutrition</title>
+<meta name="description" content="Coaching and nutrition, online and in person, worldwide. Consultations, monthly coaching and private immersions.">
+<meta name="theme-color" content="#07090A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<script>
+  
+</script>
+<style>
+:root{
+  --gold:#E4C28C;
+  --serif:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter","Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --pad:24px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+:root:not([data-theme="day"]),:root[data-theme="night"]{
+  --bg:#07090A;--ink:#F2EEE6;--mute:rgba(242,238,230,.74);--faint:rgba(242,238,230,.58);--err:#F0A596;
+  --glass:rgba(255,255,255,.055);--glass-2:rgba(255,255,255,.09);--line:rgba(255,255,255,.14);
+  --gold-ink:#E4C28C;--on-gold:#12100C;--veil:rgba(7,9,10,.55);
+}
+:root[data-theme="day"]{
+  --bg:#E7EBE7;--ink:#101A1B;--mute:rgba(16,26,27,.78);--faint:rgba(16,26,27,.66);--err:#B3412E;
+  --glass:rgba(255,255,255,.58);--glass-2:rgba(255,255,255,.76);--line:rgba(16,26,27,.16);
+  --gold-ink:#7A5A28;--on-gold:#12100C;--veil:rgba(231,235,231,.5);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;transition:background .6s var(--ease),color .6s var(--ease)}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+img{max-width:100%}
+:focus-visible{outline:1.5px solid var(--gold);outline-offset:3px;border-radius:4px}
+
+/* water light */
+#water{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block;opacity:.34;transition:opacity 1.2s var(--ease)}
+body.is-home #water,body.is-lux #water{opacity:1}
+.veil{position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,transparent 0%,transparent 35%,var(--veil) 100%)}
+body:not(.is-home) .veil{background:var(--veil)}
+
+/* nav */
+.nav{position:fixed;left:0;right:0;top:0;z-index:30;padding-top:env(safe-area-inset-top,0px);transition:background .5s var(--ease),border-color .5s var(--ease),backdrop-filter .5s}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px;padding:0 var(--pad);max-width:1280px;margin:0 auto}
+.nav.solid{background:var(--glass);-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%);border-bottom:1px solid var(--line)}
+.mark{font-family:var(--serif);font-size:18px;white-space:nowrap;letter-spacing:.01em;transition:opacity .5s var(--ease);flex:0 0 auto}
+body.is-home .nav:not(.solid) .mark{opacity:0}
+.nav .nav-cta{display:none}
+.nav-cta{height:42px;padding:0 20px;font-size:15px;margin-left:16px}
+.nav-links{display:none;gap:32px;font-size:15px;color:var(--mute)}
+.nav-links a:hover,.nav-links a.on{color:var(--ink)}
+.burger{width:44px;height:44px;display:grid;place-items:center;background:none;border:0;cursor:pointer;margin-right:-10px}
+.burger span{display:block;width:22px;height:1px;background:var(--ink);position:relative;transition:transform .4s var(--ease)}
+.burger span::after{content:"";position:absolute;left:0;top:7px;width:22px;height:1px;background:var(--ink);transition:transform .4s var(--ease),top .4s var(--ease)}
+.menu-open .burger span{transform:translateY(3.5px) rotate(45deg)}
+.menu-open .burger span::after{top:0;transform:rotate(-90deg)}
+
+.menu{position:fixed;inset:0;z-index:25;background:var(--bg);display:flex;flex-direction:column;justify-content:flex-end;padding:0 var(--pad) calc(48px + env(safe-area-inset-bottom,0px));opacity:0;pointer-events:none;transition:opacity .45s var(--ease)}
+.menu-open .menu{opacity:1;pointer-events:auto}
+.menu a{font-family:var(--serif);font-size:44px;line-height:1.15;display:block;padding:6px 0;opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.menu-open .menu a{opacity:1;transform:none}
+.menu small{display:block;margin-top:36px;color:var(--faint);font-size:14px}
+
+/* layout */
+main{position:relative;z-index:1}
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--pad)}
+.sec{padding-block:96px}
+.sec + .sec{padding-top:0}
+.serif{font-family:var(--serif);font-weight:400}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(38px,9vw,72px);line-height:1.04}
+h3{font-size:28px;line-height:1.15}
+p{margin:0}
+.lede{font-size:19px;line-height:1.55;color:var(--mute);max-width:34ch}
+.mute{color:var(--mute)}
+.stack>*+*{margin-top:20px}
+
+:root[data-theme="day"] .btn:not(.fill){border-color:var(--gold-ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 26px;border-radius:999px;border:1px solid var(--gold);color:var(--gold-ink);font-size:16px;letter-spacing:.01em;background:transparent;cursor:pointer;transition:background .35s var(--ease),color .35s var(--ease),transform .2s}
+.btn:active{transform:scale(.98)}
+.btn.fill{background:var(--gold);color:var(--on-gold)}
+.btn:hover{background:var(--gold);color:var(--on-gold)}
+.btn.fill:hover{background:transparent;color:var(--gold-ink)}
+.link{display:inline-block;color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .3s}
+.link:hover{border-color:var(--gold)}
+.row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+
+.glass{background:var(--glass);-webkit-backdrop-filter:blur(24px) saturate(140%);backdrop-filter:blur(24px) saturate(140%);border:1px solid var(--line);border-radius:28px}
+
+/* hero */
+.hero{position:relative;isolation:isolate}
+.hero::before{content:"";position:absolute;left:0;right:0;bottom:0;height:78%;z-index:-1;pointer-events:none;background:linear-gradient(0deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 82%,transparent) 38%,color-mix(in srgb,var(--bg) 40%,transparent) 70%,transparent 100%)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding-block:120px calc(116px + env(safe-area-inset-bottom,0px))}
+@supports (height:100svh){.hero{min-height:100svh}}
+.hero h1{font-size:clamp(76px,22vw,220px);line-height:.9;letter-spacing:-.025em}
+.hero h1 span{display:block}
+.hero .lede{margin-top:28px;color:var(--ink)}
+.hero .row{margin-top:36px}
+.hero-meta{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);font-size:14px;color:var(--mute);display:flex;justify-content:space-between;gap:16px}
+.load{opacity:0;transform:translateY(22px)}
+.ready .load{opacity:1;transform:none;transition:opacity 1.4s var(--ease),transform 1.4s var(--ease)}
+.ready .load.d1{transition-delay:.15s}.ready .load.d2{transition-delay:.45s}.ready .load.d3{transition-delay:.7s}.ready .load.d4{transition-delay:1s}
+
+/* pillars */
+.pillars{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad);margin:40px calc(var(--pad) * -1) 0;padding:0 var(--pad) 8px;scrollbar-width:none}
+.pillars::-webkit-scrollbar{display:none}
+.pillar{flex:0 0 72%;scroll-snap-align:start;padding:28px 24px 26px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between}
+.pillar h3{font-size:34px}
+.pillar p{font-size:15px;color:var(--mute);margin-top:12px}
+
+/* packages */
+.pkgs{display:grid;gap:14px;margin-top:40px}
+.pkg{padding:30px 26px;display:flex;flex-direction:column;gap:18px;transition:border-color .4s var(--ease),background .4s var(--ease)}
+.pkg:hover{border-color:rgba(228,194,140,.5)}
+.pkg-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.pkg h3{font-size:32px}
+.price{font-size:14px;color:var(--mute);white-space:nowrap}
+.pkg ul{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.pkg li{padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--mute)}
+.pkg .go{margin-top:4px;color:var(--gold-ink);font-size:15px}
+
+/* private feature */
+.private{position:relative;padding-block:140px;overflow:hidden}
+.private h2{font-size:clamp(52px,13vw,128px);line-height:.98}
+.private .days{display:flex;gap:10px;margin-top:36px}
+.private .days span{flex:1;border:1px solid var(--line);border-radius:18px;padding:18px 0;text-align:center;font-family:var(--serif);font-size:32px;background:var(--glass);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+.private .days small{display:block;font-family:var(--sans);font-size:13px;color:var(--mute);margin-top:2px}
+
+/* split */
+.split{display:grid;gap:40px}
+.quiet{border-top:1px solid var(--line);padding-top:22px}
+
+/* detail pages */
+.page-top{padding-block:136px 56px}
+.page-top h1{font-size:clamp(56px,15vw,140px);line-height:.95}
+.page-top .lede{margin-top:24px}
+.crumb{font-size:14px;color:var(--mute);margin-bottom:28px;display:inline-block}
+.list{list-style:none;padding:0;margin:0}
+.list li{display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);font-size:16px}
+.list li:first-child{border-top:1px solid var(--line)}
+.list li span:first-child{white-space:nowrap}
+.list li span:last-child{color:var(--mute);text-align:right}
+.steps{list-style:none;padding:0;margin:0;display:grid;gap:12px;counter-reset:s}
+.steps li{padding:24px;counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:6px 14px}
+.steps li::before{content:counter(s);font-family:var(--serif);font-size:30px;line-height:1;color:var(--gold-ink);grid-row:span 2}
+.steps b{font-weight:500}
+.steps p{color:var(--mute);font-size:15px}
+.ai-tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--mute);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+.ai-tag i{width:6px;height:6px;border-radius:50%;background:var(--gold);display:block}
+
+.method-block{padding-block:64px;border-top:1px solid var(--line)}
+.method-block h2{font-size:clamp(56px,16vw,150px);line-height:.92}
+.method-block .grid{display:grid;gap:22px;margin-top:28px}
+.method-block .fact{font-family:var(--serif);font-size:24px;line-height:1.25}
+
+/* forms */
+.form{padding:28px 22px}
+.field{display:block;margin-bottom:18px}
+.field span{display:block;font-size:14px;color:var(--mute);margin-bottom:8px}
+.field input,.field textarea,.field select{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);padding:10px 0 12px;font-size:17px;border-radius:0;outline:none;transition:border-color .3s}
+.field select{appearance:none;-webkit-appearance:none}
+.field select option{color:#111}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--gold)}
+.field .err{display:none;color:var(--err);font-size:13px;margin-top:8px}
+.field.bad .err{display:block}
+.field.bad input,.field.bad select,.field.bad textarea{border-color:var(--err)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:transparent;cursor:pointer;font-size:15px;transition:all .3s var(--ease)}
+.chip[aria-pressed="true"]{border-color:var(--gold);background:var(--gold);color:var(--on-gold)}
+.prog{display:flex;gap:6px;margin-bottom:28px}
+.prog i{flex:1;height:2px;background:var(--line);border-radius:2px;transition:background .5s var(--ease)}
+.prog i.on{background:var(--gold)}
+.step-label{font-size:14px;color:var(--mute);margin-bottom:6px}
+.form h3{margin-bottom:26px}
+.form-foot{display:flex;justify-content:space-between;align-items:center;margin-top:30px;gap:12px}
+.back{background:none;border:0;color:var(--mute);cursor:pointer;padding:12px 0;font-size:15px}
+.done{text-align:left;padding:10px 0}
+.done h3{font-size:40px;margin-bottom:14px}
+
+/* devices + app ui */
+.devices{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad);margin:40px calc(var(--pad) * -1) 0;padding:6px var(--pad) 24px;scrollbar-width:none}
+.devices::-webkit-scrollbar{display:none}
+.devices figure{margin:0;flex:0 0 auto;scroll-snap-align:start}
+.devices figcaption{margin-top:16px;font-size:15px;color:var(--mute);max-width:250px}
+.devices figcaption b{display:block;color:var(--ink);font-weight:500}
+.device{width:250px;aspect-ratio:390/844;border-radius:44px;padding:9px;background:#0b0d0e;box-shadow:0 0 0 1px rgba(255,255,255,.14),0 40px 80px rgba(0,0,0,.35)}
+.device.lg{width:min(300px,78vw)}
+.screen{position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;background:#fff}
+.screen img{width:100%;height:100%;object-fit:cover;display:block}
+.show{display:grid;gap:32px;padding-block:56px;border-top:1px solid var(--line)}
+.show .device{margin:0 auto}
+.show h2{font-size:clamp(36px,8vw,60px)}
+@media (min-width:760px){.show{grid-template-columns:1fr 1fr;align-items:center}.show.flip .device{order:2}}
+
+/* matcher */
+.fit{padding:28px 22px}
+.fit h3{font-size:30px;margin-bottom:6px}
+.fit .q{margin-top:26px}
+.fit .q p{font-size:15px;color:var(--mute);margin-bottom:12px}
+.fit-result{margin-top:28px;padding-top:24px;border-top:1px solid var(--line);display:none}
+.fit-result.on{display:block;animation:rise .6s var(--ease)}
+.fit-result h4{font-family:var(--serif);font-weight:400;font-size:40px;margin:4px 0 10px;line-height:1.05}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+/* faq */
+.faq{border-top:1px solid var(--line);margin-top:32px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-size:17px;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";width:12px;height:12px;flex:0 0 auto;border-right:1.5px solid var(--gold-ink);border-bottom:1.5px solid var(--gold-ink);transform:rotate(45deg) translateY(-3px);transition:transform .4s var(--ease)}
+.faq details[open] summary::after{transform:rotate(-135deg) translateY(-3px)}
+.faq details p{color:var(--mute);padding:0 0 22px;max-width:60ch}
+/* next */
+.next{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:28px 26px;margin-top:8px;transition:border-color .4s var(--ease)}
+.next:hover{border-color:rgba(228,194,140,.5)}
+.next small{display:block;font-size:14px;color:var(--mute)}
+.next b{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.1}
+.next i{width:44px;height:44px;border-radius:50%;border:1px solid var(--gold);flex:0 0 auto;position:relative}
+.next i::after{content:"";position:absolute;left:14px;top:17px;width:9px;height:9px;border-top:1.5px solid var(--gold-ink);border-right:1.5px solid var(--gold-ink);transform:rotate(45deg)}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:36px}
+.gal figure{margin:0;position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5;background:#0c0e0f}
+.gal figure.w{grid-column:span 2;aspect-ratio:16/10}
+.gal figure.t{aspect-ratio:3/5}
+.gal figure img,.gal figure video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.gal .ph{position:absolute;inset:0;background:
+  radial-gradient(90% 70% at var(--x,30%) var(--y,20%),rgba(228,194,140,.34),transparent 60%),
+  radial-gradient(70% 60% at calc(100% - var(--x,30%)) 90%,rgba(228,194,140,.14),transparent 65%),
+  linear-gradient(160deg,#15181a,#0a0c0d)}
+:root[data-theme="day"] .gal .ph{background:
+  radial-gradient(90% 70% at var(--x,30%) var(--y,20%),rgba(228,194,140,.55),transparent 60%),
+  radial-gradient(70% 60% at calc(100% - var(--x,30%)) 90%,rgba(140,106,54,.18),transparent 65%),
+  linear-gradient(160deg,#f4f5f2,#dfe4df)}
+.gal figcaption{position:absolute;left:14px;right:14px;bottom:12px;display:flex;justify-content:space-between;align-items:flex-end;gap:10px;font-size:14px;color:var(--ink)}
+.gal figcaption b{font-weight:500}
+.gal .kind{font-size:12px;color:var(--mute);border:1px solid var(--line);border-radius:99px;padding:4px 10px;background:var(--glass);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);white-space:nowrap}
+.gal .play{position:absolute;left:50%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;border:1px solid rgba(228,194,140,.7);background:var(--glass);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.gal .play::after{content:"";position:absolute;left:22px;top:18px;border-left:13px solid var(--gold-ink);border-top:9px solid transparent;border-bottom:9px solid transparent}
+.gal-filter{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
+
+/* calendar */
+.book{display:grid;gap:14px}
+.cal{padding:22px 18px}
+.cal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.cal-head h3{font-size:26px}
+.cal-nav{display:flex;gap:8px}
+.cal-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:transparent;cursor:pointer;position:relative}
+.cal-nav button::after{content:"";position:absolute;left:18px;top:17px;width:8px;height:8px;border-top:1.5px solid var(--ink);border-left:1.5px solid var(--ink);transform:rotate(-45deg)}
+.cal-nav button.nx::after{left:15px;transform:rotate(135deg)}
+.cal-nav button:disabled{opacity:.3;cursor:default}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.cal-grid .dow{font-size:12px;color:var(--mute);padding-bottom:6px}
+.cal-grid button{aspect-ratio:1;min-height:40px;border-radius:50%;border:1px solid transparent;background:transparent;cursor:pointer;font-size:15px;transition:all .25s var(--ease)}
+.cal-grid button:disabled{color:var(--faint);opacity:.4;cursor:default}
+.cal-grid button.taken{text-decoration:line-through}
+.cal-grid button.open{border-color:var(--line)}
+.cal-grid button.open:hover{border-color:var(--gold)}
+.cal-grid button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--on-gold)}
+.cal-grid span{aspect-ratio:1}
+.slots{padding:22px 18px}
+.slots h3{font-size:24px;margin-bottom:6px}
+.slot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
+.slot-grid button{height:48px;border-radius:14px;border:1px solid var(--line);background:transparent;cursor:pointer;font-size:15px;transition:all .25s var(--ease)}
+.slot-grid button:disabled{opacity:.35;text-decoration:line-through;cursor:default}
+.slot-grid button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--on-gold)}
+.book-sum{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 0;border-top:1px solid var(--line);margin-top:20px;font-size:15px}
+.book-sum b{font-weight:500;display:block;font-size:17px}
+
+/* email preview */
+.mail{margin-top:24px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--glass-2)}
+.mail-head{padding:14px 16px;border-bottom:1px solid var(--line);font-size:14px;color:var(--mute);display:grid;gap:4px}
+.mail-head span b{color:var(--ink);font-weight:500}
+.mail pre{margin:0;padding:16px;font:400 15px/1.6 var(--sans);white-space:pre-wrap;color:var(--ink);max-height:320px;overflow:auto}
+.copied{font-size:14px;color:var(--gold-ink);margin-left:6px;opacity:0;transition:opacity .3s}
+.copied.on{opacity:1}
+
+/* private page */
+.lux-hero{min-height:92vh;display:flex;flex-direction:column;justify-content:flex-end;padding-block:136px 64px}
+.lux-hero h1{font-size:clamp(72px,20vw,200px);line-height:.9;letter-spacing:-.02em}
+.lux-hero .lede{font-size:20px;max-width:36ch;margin-top:28px;color:var(--ink)}
+.dur{display:flex;gap:10px;margin-top:36px;max-width:560px}
+.dur span{flex:1;border:1px solid var(--line);border-radius:18px;padding:16px 0;text-align:center;font-family:var(--serif);font-size:30px;background:var(--glass);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+.dur small{display:block;font-family:var(--sans);font-size:13px;color:var(--mute);margin-top:2px}
+.chap{padding-block:88px;border-top:1px solid var(--line)}
+.chap-h{display:grid;gap:18px;margin-bottom:40px}
+.chap-h h2{font-size:clamp(40px,10vw,84px);line-height:1}
+.chap-h .lede{max-width:44ch}
+.feats{display:grid;gap:12px}
+.feat{padding:26px 24px}
+.feat h3{font-size:26px;line-height:1.15;margin-bottom:10px}
+.feat p{color:var(--mute);font-size:16px}
+.day{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.day li{display:grid;grid-template-columns:92px 1fr;gap:6px 18px;padding:22px 0;border-bottom:1px solid var(--line)}
+.day time{font-family:var(--serif);font-size:24px;color:var(--gold-ink);line-height:1.1}
+.day b{font-weight:500;font-size:17px}
+.day p{grid-column:2;color:var(--mute);font-size:15px}
+.blueprint{padding:34px 26px;display:grid;gap:22px}
+.blueprint h3{font-size:clamp(40px,9vw,64px);line-height:1}
+.bp-tags{display:flex;flex-wrap:wrap;gap:8px}
+.bp-tags span{font-size:14px;border:1px solid var(--line);border-radius:99px;padding:8px 14px;color:var(--mute)}
+.note{font-size:14px;color:var(--mute);margin-top:18px}
+
+/* method */
+.principle{padding-block:72px;border-top:1px solid var(--line)}
+.principle .n{font-family:var(--serif);font-size:20px;color:var(--gold-ink)}
+.principle h2{font-size:clamp(44px,11vw,104px);line-height:.96;margin-top:10px}
+.principle .grid{display:grid;gap:24px;margin-top:28px}
+.principle .fact{font-family:var(--serif);font-size:26px;line-height:1.25;padding-left:18px;border-left:1px solid var(--gold)}
+.creds{display:grid;gap:10px;margin-top:32px}
+.creds div{padding:22px 22px}
+.creds b{display:block;font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.1}
+.creds small{color:var(--mute);font-size:15px}
+
+@media (min-width:760px){
+  .gal{grid-template-columns:repeat(4,1fr);gap:14px}
+  .gal figure.w{grid-column:span 2}
+  .gal figure.t{grid-row:span 2;aspect-ratio:auto}
+  .book{grid-template-columns:minmax(0,460px) minmax(0,440px);align-items:start}
+  .cal-grid button{min-height:44px}
+  .cal,.slots{padding:32px}
+  .feats{grid-template-columns:repeat(2,1fr);gap:14px}
+  .feats.three{grid-template-columns:repeat(3,1fr)}
+  .chap{padding-block:120px}
+  .chap-h{grid-template-columns:1fr 1fr;align-items:end;margin-bottom:56px}
+  .day li{grid-template-columns:140px 1fr 1.3fr;align-items:baseline}
+  .day p{grid-column:3}
+  .blueprint{grid-template-columns:1fr 1fr;align-items:center;padding:48px}
+  .principle .grid{grid-template-columns:1.2fr 1fr;align-items:start}
+  .creds{grid-template-columns:repeat(4,1fr)}
+  .enq{max-width:760px}
+}
+
+/* polish v5 */
+.steps li{align-content:start}
+.split > .link{justify-self:start;align-self:end}
+.day li{grid-template-columns:106px 1fr}
+.day time{font-size:22px}
+
+.hero .row .btn{padding:0 20px}
+.pillar h3{font-size:27px;line-height:1.12}
+.pillar{min-height:210px}
+.gal{grid-auto-flow:dense}
+.gal figure.t{grid-row:span 2;aspect-ratio:auto;min-height:100%}
+.chap-h h2,.principle h2{text-wrap:balance}
+h1,h2,h3{text-wrap:balance}
+.lede,.feat p,.steps p{text-wrap:pretty}
+@media (min-width:760px){.hero .row .btn{padding:0 26px}}
+
+/* footer */
+footer{position:relative;z-index:1;padding:80px 0 calc(120px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);margin-top:40px}
+.foot-mark{font-family:var(--serif);font-size:44px;line-height:1}
+.foot-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px;font-size:15px}
+.foot-grid a{display:block;color:var(--mute);padding:10px 0}
+.foot-grid a:hover{color:var(--ink)}
+.foot-base{display:flex;justify-content:space-between;align-items:center;margin-top:52px;font-size:14px;color:var(--mute);gap:16px;flex-wrap:wrap}
+.toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--glass);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+.toggle.mini{padding:2px;margin-left:auto}
+.toggle.mini button{height:34px;padding:0 13px;font-size:13px}
+.hero-theme{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:20px;font-size:14px;flex-wrap:wrap}
+.toggle button{border:0;background:transparent;height:40px;padding:0 16px;border-radius:999px;font-size:13px;color:var(--mute);cursor:pointer;transition:all .35s var(--ease)}
+.toggle button[aria-pressed="true"]{background:var(--gold);color:var(--on-gold)}
+
+/* sticky bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:12px var(--pad) calc(12px + env(safe-area-inset-bottom,0px));background:var(--glass);-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%);border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;transition:transform .5s var(--ease)}
+.bar p{font-size:14px;color:var(--mute);line-height:1.3}
+.bar .btn{height:46px;flex:0 0 auto}
+.bar.hide{transform:translateY(110%)}
+
+/* route transition */
+#view{transition:opacity .45s var(--ease)}
+#view.out{opacity:0}
+
+@media (min-width:760px){
+  :root{--pad:48px}
+  .nav-links{display:flex}
+  .burger{display:none}
+  .pillar{flex:0 0 calc(33.333% - 8px)}
+  .pkgs{grid-template-columns:repeat(3,1fr)}
+  .split{grid-template-columns:1fr 1fr;align-items:end}
+  .method-block .grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .bar{display:none}
+  .form{padding:44px}
+  .foot-grid{grid-template-columns:repeat(4,1fr)}
+  footer{padding-bottom:64px}
+  .hero{padding-block-end:72px}
+}
+
+@media (min-width:760px){
+  .nav .nav-cta{display:inline-flex;margin-left:28px}
+  .mark{font-size:21px}
+  .nav-links{margin-left:auto}
+  .toggle.mini{margin-left:20px}
+  .form,.fit{max-width:680px}
+  .list,.faq,.next{max-width:820px}
+  .private .days{max-width:560px}
+  .devices{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;overflow:visible;margin:44px 0 0;padding:0}
+  .devices .device{width:100%}
+  .devices figcaption{max-width:none}
+  .device.lg{width:min(340px,40vw)}
+  .pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;overflow:visible;margin:40px 0 0;padding:0}
+  .pillar{flex:none;min-height:240px}
+  .hero .lede{font-size:21px;max-width:38ch}
+  .sec{padding-block:120px}
+  .method-block{padding-block:88px}
+  .show{gap:56px;padding-block:80px}
+  .steps li{padding:30px}
+}
+@media (min-width:1200px){
+  :root{--pad:64px}
+  .sec{padding-block:140px}
+  .hero{padding-block-end:88px}
+  .pkg{padding:36px 32px}
+  .next{padding:34px 34px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+  .load{opacity:1;transform:none}
+}
+/* late overrides 2 */
+.principle .lede{max-width:46ch}
+@media (min-width:760px){.pillar{min-height:170px}}
+@media (min-width:760px){.gal figure.w{aspect-ratio:auto;min-height:220px}}
+/* late overrides */
+@media (min-width:760px){
+  .steps{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .pillars{grid-template-columns:repeat(3,1fr)}
+  .day li{grid-template-columns:140px 1fr 1.3fr}
+  .day time{font-size:24px}
+}
+/* retention v6 */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--glass)}
+.seg button{border:0;background:transparent;height:34px;padding:0 14px;border-radius:999px;font-size:14px;color:var(--mute);cursor:pointer;transition:all .3s var(--ease)}
+.seg button[aria-pressed="true"]{background:var(--gold);color:var(--on-gold)}
+.stat{padding:18px 18px 16px;border:1px solid var(--line);border-radius:18px;background:var(--glass-2)}
+.stat small{font-size:13px;color:var(--mute)}
+.stat b{display:flex;align-items:baseline;gap:8px;font-family:var(--serif);font-weight:400;font-size:40px;line-height:1.1;margin:4px 0 6px}
+.stat b i{font-style:normal;font-family:var(--sans);font-size:15px;color:var(--mute)}
+.stat p{font-size:14px;color:var(--mute)}
+.resume{position:fixed;left:12px;right:12px;bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:12px;padding:14px 12px 14px 18px;border-radius:22px;opacity:0;transform:translateY(16px);transition:opacity .5s var(--ease),transform .5s var(--ease);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.resume.on{opacity:1;transform:none}
+.resume div{flex:1;min-width:0;display:grid;gap:1px}
+.resume small{font-size:12px;color:var(--gold-ink)}
+.resume b{font-weight:500;font-size:15px}
+.resume span{font-size:13px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.resume .btn{height:40px;padding:0 16px;font-size:14px;flex:0 0 auto}
+.resume .x{width:32px;height:32px;border:0;background:transparent;position:relative;cursor:pointer;flex:0 0 auto}
+.resume .x::before,.resume .x::after{content:"";position:absolute;left:9px;top:15px;width:14px;height:1.5px;background:var(--mute);transform:rotate(45deg)}
+.resume .x::after{transform:rotate(-45deg)}
+.readbar{position:fixed;left:0;right:0;top:0;height:2px;z-index:35;background:var(--gold);transform-origin:0 50%;transform:scaleX(0);transition:transform .1s linear;pointer-events:none;margin-top:env(safe-area-inset-top,0px)}
+@media (min-width:760px){
+  .resume{left:auto;right:24px;bottom:24px;width:440px}
+}
+.field .seg{display:inline-flex;flex:0 0 auto;margin:0;font-size:inherit}
+.stat b{flex-wrap:wrap;row-gap:0}
+.stat b i{white-space:nowrap}
+@media (max-width:759px){.stat{padding:14px 16px}.stat b{font-size:34px;margin:2px 0 4px}.stat p{font-size:13px}}
+@media (min-width:760px){.stat b{font-size:36px}}
+/* photos v8 */
+html,body{overflow-x:clip}
+.photo-bg{position:absolute;z-index:-2;overflow:hidden;pointer-events:none}
+.photo-bg.bleed{top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%)}
+.photo-bg.fill{inset:0}
+.photo-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo-bg .pd{display:none}
+@media (min-width:760px){.photo-bg .pm{display:none}.photo-bg .pd{display:block}}
+.hero .photo-bg img{animation:drift 14s var(--ease) both}
+@keyframes drift{from{transform:scale(1.06)}to{transform:scale(1)}}
+.hero::before{height:100%;background:linear-gradient(0deg,var(--bg) 0%,rgba(7,9,10,.88) 30%,rgba(7,9,10,.35) 62%,rgba(7,9,10,.45) 100%)}
+.lux-hero{position:relative;isolation:isolate}
+.lux-hero::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);z-index:-1;background:linear-gradient(0deg,var(--bg) 0%,rgba(7,9,10,.82) 34%,rgba(7,9,10,.3) 70%,rgba(7,9,10,.55) 100%)}
+.private{isolation:isolate}
+.private::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(7,9,10,.9) 0%,rgba(7,9,10,.6) 55%,rgba(7,9,10,.2) 100%),linear-gradient(0deg,var(--bg),transparent 30%,transparent 80%,var(--bg))}
+@media (max-width:759px){.private::before{background:linear-gradient(0deg,var(--bg) 0%,rgba(7,9,10,.86) 45%,rgba(7,9,10,.4) 100%)}}
+.portrait{margin:0;border-radius:28px;overflow:hidden;aspect-ratio:5/7;border:1px solid var(--line);max-width:460px}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.gal figure img{transition:transform 1.2s var(--ease)}
+.gal figure:hover img{transform:scale(1.03)}
+.gal figcaption{background:linear-gradient(0deg,rgba(0,0,0,.55),transparent);left:0;right:0;bottom:0;padding:40px 16px 14px}
+.gal figcaption b{color:#F2EEE6}
+body.is-home #water,body.is-lux #water{opacity:.34}
+/* photos v8b */
+.hero::before{left:50%;right:auto;width:100vw;transform:translateX(-50%)}
+@media (min-width:760px){
+  .hero::before{background:linear-gradient(90deg,rgba(7,9,10,.92) 0%,rgba(7,9,10,.7) 38%,rgba(7,9,10,.1) 68%,rgba(7,9,10,.2) 100%),linear-gradient(0deg,var(--bg) 0%,transparent 28%)}
+  .split:has(.portrait){align-items:center}
+}
+@media (max-width:759px){
+  .hero::before{background:linear-gradient(0deg,var(--bg) 0%,rgba(7,9,10,.9) 34%,rgba(7,9,10,.25) 58%,rgba(7,9,10,.15) 80%,rgba(7,9,10,.5) 100%)}
+  .private{padding-top:62vh}
+  .private .photo-bg{bottom:auto;height:78vh}
+  .private::before{background:linear-gradient(0deg,var(--bg) 0%,var(--bg) 22%,rgba(7,9,10,.55) 42%,rgba(7,9,10,0) 70%,rgba(7,9,10,.35) 100%)}
+  .lux-hero{padding-top:56vh}
+  .lux-hero::before{background:linear-gradient(0deg,var(--bg) 0%,rgba(7,9,10,.9) 40%,rgba(7,9,10,.2) 66%,rgba(7,9,10,.5) 100%)}
+}
+@media (min-width:760px){.private h2{max-width:12ch}.split:has(.portrait) .stack{max-width:48ch}}
+/* v9: Lorenzo's notes */
+.not{padding-block:110px}
+.not-lead{font-family:var(--serif);font-size:clamp(22px,4vw,30px);color:var(--gold-ink);margin-bottom:18px}
+.not-list{list-style:none;padding:0;margin:0}
+.not-list li{font-family:var(--serif);font-size:clamp(34px,7.4vw,72px);line-height:1.08;letter-spacing:-.01em;color:var(--ink);padding:6px 0;border-bottom:1px solid var(--line)}
+.not-list li:nth-child(n+4){color:var(--mute)}
+.not-close{margin-top:36px;font-size:clamp(19px,2.6vw,24px);color:var(--ink);max-width:30ch}
+.one-line{font-family:var(--serif);font-size:clamp(26px,4.6vw,40px);margin-top:44px;color:var(--mute)}
+.pkg{gap:14px;min-height:220px;justify-content:space-between}
+.pkg h3{font-size:36px}
+.pkg-line{font-size:18px;line-height:1.45;color:var(--ink);max-width:24ch}
+.stages{list-style:none;padding:0;margin:0}
+.stages li{padding-block:48px;border-top:1px solid var(--line);display:grid;gap:14px}
+.stages li:last-child{border-bottom:1px solid var(--line)}
+.stages .n{font-family:var(--serif);font-size:20px;color:var(--gold-ink)}
+.stages h2{font-size:clamp(48px,11vw,104px);line-height:.95}
+.stages .lede{max-width:46ch}
+.close-line{font-family:var(--serif);font-size:clamp(30px,5.6vw,52px);line-height:1.15;max-width:22ch}
+.tests-line{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);font-size:15px;color:var(--mute);max-width:60ch}
+.tests-line b{color:var(--gold-ink);font-weight:500}
+.proof-img{margin:0;border-radius:28px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10}
+.proof-img img{width:100%;height:100%;object-fit:cover;display:block}
+.quotes{display:grid;gap:12px;margin-top:32px}
+.quotes blockquote{margin:0;padding:28px}
+.quotes p{font-family:var(--serif);font-size:24px;line-height:1.3}
+.quotes cite{display:block;margin-top:14px;font-style:normal;font-size:14px;color:var(--mute)}
+.gal figure.full{grid-column:1/-1;aspect-ratio:21/9}
+@media (min-width:760px){
+  .stages li{grid-template-columns:60px 1fr 1.1fr;align-items:baseline;gap:24px}
+  .not-list{columns:1}
+  .quotes{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:759px){.creds{grid-template-columns:1fr 1fr}.creds b{font-size:24px}}
+.not-list li:first-child{color:var(--ink)}
+@media (min-width:760px){.not-list li{font-size:clamp(30px,3.6vw,52px);white-space:nowrap}.proof-img{aspect-ratio:21/9}.proof-img img{object-position:60% 45%}}
+
+/* v10: photo blend + quieter "This is not" */
+.private .photo-bg{-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 16%,#000 70%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0%,#000 16%,#000 70%,transparent 100%)}
+@media (max-width:759px){
+  .private .photo-bg{-webkit-mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.2) 9%,rgba(0,0,0,.65) 19%,#000 32%,#000 58%,transparent 96%);mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.2) 9%,rgba(0,0,0,.65) 19%,#000 32%,#000 58%,transparent 96%)}
+  .private::before{background:linear-gradient(0deg,var(--bg) 0%,var(--bg) 22%,rgba(7,9,10,.5) 44%,rgba(7,9,10,.1) 70%,rgba(7,9,10,0) 100%)}
+}
+.lux-hero .photo-bg{-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 62%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,#000 62%,transparent 100%)}
+.not{padding-block:84px}
+.not-list li,.not-list li:first-child{font-size:clamp(22px,5.6vw,30px);line-height:1.25;letter-spacing:0;color:var(--mute);padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.not-list li:first-child{color:var(--ink)}
+.not-close{margin-top:28px;font-size:17px;color:var(--gold-ink)}
+@media (min-width:760px){.not-list li,.not-list li:first-child{font-size:clamp(24px,2.4vw,32px);white-space:normal}}
+@media (min-width:760px){.private::before{left:50%;right:auto;width:100vw;transform:translateX(-50%);background:linear-gradient(90deg,rgba(7,9,10,.85) 0%,rgba(7,9,10,.5) 45%,rgba(7,9,10,0) 75%)}}
+.private::before{-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 16%);mask-image:linear-gradient(180deg,transparent 0%,#000 16%)}
+@media (max-width:759px){.private::before{-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 22%);mask-image:linear-gradient(180deg,transparent 0%,#000 22%)}}
+</style>
+</head>
+<body>
+<canvas id="water" aria-hidden="true"></canvas>
+<div class="veil" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a href="#/" class="mark" aria-label="Lorenzo Fanelli, home">Lorenzo Fanelli</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#/method">Method</a><a href="#/packages">Coaching</a><a href="#/private">Private</a><a href="#/gallery">Gallery</a><a href="#/about">About</a>
+    </nav>
+          <a class="btn nav-cta" href="#/book">Book</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <a href="#/method">Method</a><a href="#/app">How it works</a><a href="#/packages">Coaching</a><a href="#/private">Private</a><a href="#/gallery">Gallery</a><a href="#/about">About</a><a href="#/faq">FAQ</a><a href="#/book">Book</a>
+  <small>Coaching and nutrition, worldwide. <span data-ig-text>@lorefanecoach</span></small>
+</div>
+
+<main id="view"></main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-mark">Lorenzo Fanelli</div>
+    <p class="mute" style="margin-top:14px;max-width:32ch">Coaching and nutrition. Online and in person, worldwide.</p>
+    <div class="foot-grid">
+      <div><a href="#/method">Method</a><a href="#/app">How it works</a><a href="#/packages">Coaching</a><a href="#/private">Private</a></div>
+      <div><a href="#/gallery">Gallery</a><a href="#/book">Book</a><a href="#/faq">FAQ</a><a href="#/about">About</a><a href="#/contact">Contact</a><a data-ig-href href="https://instagram.com/lorefanecoach" target="_blank" rel="noopener">Instagram</a></div>
+    </div>
+    <div class="foot-base">
+      <span>Clients worldwide</span>
+    </div>
+  </div>
+</footer>
+
+<div class="bar" id="bar">
+  <p>Book a consultation<br><span style="color:var(--ink)">One hour, online or in person</span></p>
+  <a class="btn fill" href="#/book">Book</a>
+</div>
+
+<script>
+/* ---------- photos (Lorenzo's shoot) ---------- */
+const IMG={"hero_m": "images/hero_m.jpg", "hero_d": "images/hero_d.jpg", "about": "images/about.jpg", "coach": "images/coach.jpg", "white": "images/white.jpg", "back": "images/back.jpg", "pool_p": "images/pool_p.jpg", "pool_m": "images/pool_m.jpg", "pool_w": "images/pool_w.jpg", "group_w": "images/group_w.jpg", "group_pan": "images/group_pan.jpg"};
+const PHOTO=(m,d,alt,cls)=>`<div class="photo-bg ${cls||''}" aria-hidden="${alt?'false':'true'}"><img class="pm" src="${IMG[m]}" alt="${alt||''}"><img class="pd" src="${IMG[d||m]}" alt=""></div>`;
+
+/* ---------- config: prices, contact ---------- */
+const PRICE = {
+  consult:'$200',
+  coaching:'Monthly, on request',     // questionnaire said $1,200 a month; confirm before showing
+  private:'By application',
+  ai:'Included in every plan'
+};
+let SHOW_PRIVATE_PRICE = false;      // flip to true once the range is confirmed
+let PRIVATE_RANGE = '$10,000 to $20,000';
+let IG = 'lorefanecoach';
+let NOT_CLOSE = 'It is a routine built around a purpose, and kept.';
+const CREDS = [['MSc','Nutrition'],['BSc','Sports sciences'],['6+ years','Coaching'],['Your doctors','Worked alongside']];
+const MAIL = ['lal.lorenzofanelli','gmail.com'];   // assembled at runtime so scrapers can't read it
+const mailAddr = () => MAIL.join('@');
+
+/* ---------- packages ---------- */
+const PKG = {
+  consult:{
+    name:'Consult', line:'One hour. A clear plan for the next four weeks.',
+    invest:'$200, paid once',
+    items:[
+      ['Consultation','One hour, online or in person'],
+      ['Training plan','Four weeks, written for you'],
+      ['Nutrition plan','Four weeks, built around your week'],
+      ['Between sessions','An AI coach trained by Lorenzo, included'],
+      ['Dashboard','Track your results as you go']
+    ],
+    who:'For people who train on their own and want a plan that is actually theirs, with support in between.',
+    how:[
+      ['Book','Choose a time for your consultation.'],
+      ['Meet','One hour on your goals, routine, history and preferences.'],
+      ['Run it','Both plans land in your dashboard, with support between sessions and the coach a message away.']
+    ]
+  },
+  coaching:{
+    name:'Coaching', line:'Eight sessions a month. A plan that moves with you.',
+    invest:'Monthly, confirmed after your consultation',
+    items:[
+      ['Sessions','Eight sessions a month, live or online'],
+      ['Homework','Training and nutrition guidance between sessions'],
+      ['Dashboard','Pro access, shared with the coach'],
+      ['Between sessions','An AI coach trained by Lorenzo, included']
+    ],
+    who:'For people who want coaching every week, and a plan that changes when life does.',
+    how:[
+      ['Start','Every coaching plan begins with a one hour consultation.'],
+      ['Train','Eight sessions a month, live or online.'],
+      ['Share','Training, food and results live in the dashboard, so every session starts from real data.']
+    ]
+  },
+  private:{
+    name:'Private', line:'10, 20 or 30 days at your home. The whole routine, rebuilt.'
+  }
+};
+
+/* ---------- gallery slots: replace src with real media ---------- */
+const GALLERY = [
+  {label:'Outdoor training', cls:'t', get src(){return IMG.hero_m}},
+  {label:'Between sessions', cls:'', get src(){return IMG.white}},
+  {label:'Off the clock', cls:'', get src(){return IMG.about}},
+  {label:'On the floor', cls:'', get src(){return IMG.coach}},
+  {label:'Anywhere in the world', cls:'w', get src(){return IMG.pool_w}},
+  {label:'Loaded carries', cls:'', get src(){return IMG.back}},
+  {label:'Good company', cls:'full', get src(){return IMG.group_pan}}
+];
+const galTile = g => `<figure class="${g.cls}">
+  ${g.video?`<video src="${g.video}" muted loop playsinline preload="metadata"></video>`:`<img src="${g.src}" alt="${g.label}" loading="lazy">`}
+  <figcaption><b>${g.label}</b></figcaption>
+</figure>`;
+
+/* ---------- FAQ ---------- */
+const FAQ=[
+ ['Do I need to live nearby?','No. Consultations and coaching run online, with in person sessions where location allows. Private immersions happen at your home, anywhere in the world.'],
+ ['Do you work with my doctors?','Yes. With your permission, the coach works alongside your doctors and specialists. Every Private immersion includes testing reviewed with a physician.'],
+ ['What happens between sessions?','An AI coach trained by Lorenzo answers day to day questions using your own plans. It is included in every plan, always labelled as AI, never gives medical or injury advice, and passes anything uncertain to the coach.'],
+ ['What if I travel a lot?','Tell the app where you are. Sessions switch to the equipment you have, and food guidance follows your calendar.'],
+ ['Where do I start?','With a one hour consultation. It is the first step for every plan, including coaching.'],
+ ['I was referred by a client.','Mention their name when you book and you will be offered a priority call.'],
+ ['How do payments work?','The consultation is paid once. Coaching is monthly and you can cancel before your next billing date. Private immersions are quoted after a call, with travel covered by the client.']
+];
+const faqHTML=(list)=>`<div class="faq">${list.map(f=>`<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join('')}</div>`;
+const NEXT=(href,label,title)=>`<section class="sec wrap" style="padding-top:24px"><a class="next glass" href="${href}"><span><small>${label}</small><b>${title}</b></span><i aria-hidden="true"></i></a></section>`;
+
+/* ---------- AI coach ---------- */
+const AICOACH=[
+  ['Trained by Lorenzo','Built from Lorenzo\'s own coaching, then tested until it answers the way Lorenzo would.'],
+  ['Uses your plan','Every answer starts from your own training and nutrition plan.'],
+  ['Knows its limits','Medical, injury and medication questions go straight to the coach. It never diagnoses and never prescribes.'],
+  ['Asks when unsure','If a question has no clear answer, it says so and passes it to the coach.']
+];
+const aiHTML=()=>`<section class="sec wrap">
+  <div class="chap-h" style="margin-bottom:32px"><h2 style="font-size:clamp(34px,7vw,56px)">Between sessions.</h2><p class="lede">An AI coach trained by Lorenzo, included in every plan. Available any hour, always labelled as AI.</p></div>
+  <div class="feats">${AICOACH.map(t=>`<div class="feat glass"><h3>${t[0]}</h3><p>${t[1]}</p></div>`).join('')}</div>
+</section>`;
+
+/* ---------- enquiry: builds an email asking for more information ---------- */
+const ENQ_Q=[
+ {id:'what',q:'What are you looking for?',o:['Coaching and nutrition','A private immersion','A single consultation','Not sure yet']},
+ {id:'when',q:'When would you like to start?',o:['This month','Next month','Just exploring']}
+];
+const ENQ={what:'',when:'',where:'',name:'',email:'',note:''};
+try{Object.assign(ENQ,JSON.parse(localStorage.getItem('lf-enq')||'{}'))}catch(e){}
+const enquireHTML=()=>`<div class="fit glass enq" id="enq">
+  <h3>Ask for more information.</h3>
+  <p class="mute">Answer a few things and we'll write the email for you.</p>
+  ${ENQ_Q.map(q=>`<div class="q"><p>${q.q}</p><div class="chips">${q.o.map(o=>`<button type="button" class="chip" data-q="${q.id}" data-v="${o}" aria-pressed="${ENQ[q.id]===o}">${o}</button>`).join('')}</div></div>`).join('')}
+  <div class="q">
+    <label class="field"><span>Where are you based?</span><input data-f="where" placeholder="City" value="${esc(ENQ.where)}"></label>
+    <label class="field"><span>Your name</span><input data-f="name" autocomplete="name" value="${esc(ENQ.name)}"></label>
+    <label class="field"><span>Your email</span><input data-f="email" type="email" autocomplete="email" value="${esc(ENQ.email)}"></label>
+    <label class="field"><span>Anything we should know? Optional</span><textarea data-f="note" rows="3">${esc(ENQ.note)}</textarea></label>
+  </div>
+  <div class="fit-result" id="enqres" aria-live="polite"></div>
+</div>`;
+function enqEmail(){
+  const d=ENQ;
+  const subject=`Enquiry: ${d.what||'coaching'}${d.name?', '+d.name:''}`;
+  const lines=['Hello,','','I found your website and would like more information.',''];
+  if(d.what) lines.push('I\'m interested in: '+d.what.toLowerCase());
+  if(d.when) lines.push('I\'d like to start: '+d.when.toLowerCase());
+  if(d.where) lines.push('I\'m based in: '+d.where);
+  if(d.note) lines.push('','A bit about me:',d.note);
+  lines.push('','Could you tell me about next steps and availability?','','Thank you,',d.name||'',d.email||'');
+  return {subject, body:lines.join('\n').trim()};
+}
+function bindEnquire(){
+  const el=document.getElementById('enq'); if(!el) return;
+  const save=()=>{try{localStorage.setItem('lf-enq',JSON.stringify(ENQ))}catch(e){}};
+  const show=()=>{
+    const r=document.getElementById('enqres');
+    if(!ENQ.what){r.classList.remove('on');r.innerHTML='';return}
+    const {subject,body}=enqEmail();
+    const href=`mailto:${mailAddr()}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const ready=ENQ.name&&/^\S+@\S+\.\S+$/.test(ENQ.email);
+    r.innerHTML=`<small class="mute">Your email</small>
+      <div class="mail"><div class="mail-head"><span>To <b>${mailAddr()}</b></span><span>Subject <b>${esc(subject)}</b></span></div><pre>${esc(body)}</pre></div>
+      <div class="row" style="margin-top:22px">
+        <a class="btn fill" href="${href}" ${ready?'':'aria-disabled="true" data-block="1"'}>Open in my email</a>
+        <button type="button" class="btn" id="enqcopy">Copy text</button><span class="copied" id="enqok">Copied</span>
+      </div>
+      ${ready?'':'<p class="note">Add your name and email to send it.</p>'}`;
+    r.classList.add('on');
+    const a=r.querySelector('a[data-block]'); if(a) a.onclick=e=>{e.preventDefault();el.querySelector(ENQ.name?'[data-f=email]':'[data-f=name]').focus()};
+    document.getElementById('enqcopy').onclick=()=>{
+      const t=`To: ${mailAddr()}\nSubject: ${subject}\n\n${body}`;
+      (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).catch(()=>{const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy')}catch(e){}ta.remove()})
+        .finally(()=>{const k=document.getElementById('enqok');k.classList.add('on');setTimeout(()=>k.classList.remove('on'),1600)});
+    };
+  };
+  el.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{ENQ[b.dataset.q]=b.dataset.v;
+    el.querySelectorAll(`[data-q="${b.dataset.q}"]`).forEach(x=>x.setAttribute('aria-pressed',x===b));save();show()});
+  el.querySelectorAll('[data-f]').forEach(i=>i.oninput=()=>{ENQ[i.dataset.f]=i.value.trim();save();show()});
+  show();
+}
+
+/* ---------- booking calendar (first consultation) ---------- */
+const SLOTS=['08:00','09:30','11:00','13:30','15:00','17:30'];
+const BK={view:null,date:null,time:null,name:'',email:'',done:false};
+const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+function dayOpen(d){
+  const t=new Date();t.setHours(0,0,0,0);
+  const max=new Date(t);max.setDate(max.getDate()+60);
+  if(d<=t||d>max) return false;
+  const w=d.getDay(); if(w===0) return false;              // Sundays off
+  return ((d.getDate()*7+d.getMonth()*3)%9)!==0;            // a few booked days
+}
+function slotOpen(d,s){return ((d.getDate()+SLOTS.indexOf(s)*5+d.getMonth())%4)!==0}
+function bookHTML(){return `<div class="book" id="book"></div>`}
+function renderBook(){
+  const el=document.getElementById('book'); if(!el) return;
+  if(!BK.view){const n=new Date();let open=0;const last=new Date(n.getFullYear(),n.getMonth()+1,0).getDate();
+    for(let d=n.getDate();d<=last;d++) if(dayOpen(new Date(n.getFullYear(),n.getMonth(),d))) open++;
+    BK.view=new Date(n.getFullYear(),n.getMonth()+(open<6?1:0),1)}
+  if(BK.done){
+    const d=new Date(BK.date+'T12:00');
+    const nice=d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
+    el.innerHTML=`<div class="form glass" style="grid-column:1/-1"><div class="done"><h3>Request sent.</h3>
+      <p class="mute">${nice} at ${BK.time}, your time. A confirmation and payment link will follow by email.${BK.ref?' As a referral, you will be offered a priority call.':''}</p>
+      <div class="row" style="margin-top:28px"><a class="btn" href="#/packages/consult">What's included</a><a class="link" href="#/">Back home</a></div></div></div>`;
+    return;
+  }
+  const v=BK.view, y=v.getFullYear(), m=v.getMonth();
+  const first=(new Date(y,m,1).getDay()+6)%7, days=new Date(y,m+1,0).getDate();
+  const now=new Date(), minV=new Date(now.getFullYear(),now.getMonth(),1), maxV=new Date(now.getFullYear(),now.getMonth()+2,1);
+  let cells='';for(let i=0;i<first;i++) cells+='<span></span>';
+  const today0=new Date();today0.setHours(0,0,0,0);
+  for(let d=1;d<=days;d++){const dt=new Date(y,m,d),k=iso(dt),o=dayOpen(dt),past=dt<=today0||dt.getDay()===0;
+    cells+=`<button type="button" class="${o?'open':past?'past':'taken'}" data-d="${k}" ${o?'':'disabled'} aria-pressed="${BK.date===k}" aria-label="${dt.toDateString()}${o?'':', unavailable'}">${d}</button>`}
+  const sel=BK.date?new Date(BK.date+'T12:00'):null;
+  const tz=(Intl.DateTimeFormat().resolvedOptions().timeZone||'').replace(/_/g,' ');
+  el.innerHTML=`
+  <div class="cal glass">
+    <div class="cal-head"><h3>${v.toLocaleDateString('en-GB',{month:'long',year:'numeric'})}</h3>
+      <div class="cal-nav"><button type="button" class="pv" aria-label="Previous month" ${v<=minV?'disabled':''}></button><button type="button" class="nx" aria-label="Next month" ${v>=maxV?'disabled':''}></button></div></div>
+    <div class="cal-grid">${['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(x=>`<span class="dow">${x}</span>`).join('')}${cells}</div>
+  </div>
+  <div class="slots glass">
+    <h3>${sel?sel.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'}):'Pick a day'}</h3>
+    <p class="mute" style="font-size:14px">Times shown in your time zone${tz?', '+tz:''}.</p>
+    ${sel?`<div class="slot-grid">${SLOTS.map(s=>`<button type="button" data-t="${s}" ${slotOpen(sel,s)?'':'disabled'} aria-pressed="${BK.time===s}">${s}</button>`).join('')}</div>`:'<p class="mute" style="margin-top:18px">Open days are outlined. Crossed out days are fully booked.</p>'}
+    ${sel&&BK.time?`
+      <div class="book-sum"><span><b>First consultation</b>One hour</span><span>${PRICE.consult}</span></div>
+      <label class="field"><span>Name</span><input id="bkn" autocomplete="name" value="${esc(BK.name)}"><em class="err">Add your name.</em></label>
+      <label class="field"><span>Email</span><input id="bke" type="email" autocomplete="email" value="${esc(BK.email)}"><em class="err">Add a valid email.</em></label>
+      <label class="field"><span>Referred by a client? Optional</span><input id="bkr" placeholder="Their name" value="${esc(BK.ref||'')}"></label>
+      <button type="button" class="btn fill" id="bkgo" style="width:100%;margin-top:8px">Request ${BK.time}</button>`:''}
+  </div>`;
+  el.querySelector('.pv').onclick=()=>{BK.view=new Date(y,m-1,1);renderBook()};
+  el.querySelector('.nx').onclick=()=>{BK.view=new Date(y,m+1,1);renderBook()};
+  el.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>{BK.date=b.dataset.d;BK.time=null;renderBook()});
+  el.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{BK.time=b.dataset.t;renderBook();const n=document.getElementById('bkn');if(n&&matchMedia('(max-width:759px)').matches)n.scrollIntoView({block:'center',behavior:'smooth'})});
+  const go=document.getElementById('bkgo');
+  if(go) go.onclick=()=>{const n=document.getElementById('bkn'),e=document.getElementById('bke');let ok=true;
+    [n,e].forEach(x=>x.closest('.field').classList.remove('bad'));
+    BK.name=n.value.trim();BK.email=e.value.trim();BK.ref=(document.getElementById('bkr')||{value:''}).value.trim();
+    if(!BK.name){n.closest('.field').classList.add('bad');ok=false}
+    if(!/^\S+@\S+\.\S+$/.test(BK.email)){e.closest('.field').classList.add('bad');ok=false}
+    if(ok){BK.done=true;try{localStorage.setItem('lf-book',JSON.stringify({date:BK.date,time:BK.time,done:true}))}catch(e){}renderBook();window.scrollTo({top:0,behavior:'smooth'})}};
+}
+
+/* ---------- views ---------- */
+const V = {};
+const H2 = 'style="font-size:clamp(34px,7vw,56px)"';
+
+const NOT=['This is not a 30-day transformation.','Not a diet.','Not a template with your name on it.','Not a PDF handed over and forgotten.','Not a plan written for someone else\'s life.','Not punishment.','Not a quick fix.'];
+const notHTML=()=>`<section class="sec wrap not">
+  <ul class="not-list">${NOT.map(n=>`<li>${n}</li>`).join('')}</ul>
+  <p class="not-close">${NOT_CLOSE}</p>
+</section>`;
+
+const STAGES=[
+  ['Purpose','Why now, and why this. The goal behind the goal: the tour, the board, the surgery, the decade ahead.'],
+  ['Destination','A clear target, defined together. How you want to feel, perform and look, and the markers that prove it.'],
+  ['Time','The weeks available, the travel ahead, the season of life. The plan is built on the calendar you actually have.'],
+  ['Route','Training, food, sleep and recovery, planned backwards from the destination and adjusted as life moves.']
+];
+
+/* client words: add real quotes here, with permission. Nothing renders while empty. */
+const TESTIMONIALS=[
+  // {quote:'...', who:'Founder, 58, London'}
+];
+const proofHTML=()=>`<section class="sec wrap proof">
+  <figure class="proof-img"><img src="${IMG.group_w}" alt="Lorenzo laughing with a group class"></figure>
+  <div class="split" style="margin-top:40px">
+    <h2 ${H2}>Serious work. Good company.</h2>
+    <div class="stack"><p class="mute">Executives, founders and artists, mostly between 45 and 70, coached in person and online, and in step with their doctors.</p></div>
+  </div>
+  ${TESTIMONIALS.length?`<div class="quotes">${TESTIMONIALS.map(t=>`<blockquote class="glass"><p>${t.quote}</p><cite>${t.who}</cite></blockquote>`).join('')}</div>`:''}
+  <div class="creds">${CREDS.map(c=>`<div class="glass"><b>${c[0]}</b><small>${c[1]}</small></div>`).join('')}</div>
+</section>`;
+
+V.home = () => `
+<section class="hero wrap">
+  ${PHOTO('hero_m','hero_d','Lorenzo training outdoors','bleed')}
+  <h1 class="load d1"><span>Lorenzo</span><span>Fanelli</span></h1>
+  <p class="lede load d2">Coaching and nutrition, built around the life you actually live.</p>
+  <div class="row load d3"><a class="btn fill" href="#/book">Book a consultation</a><a class="btn" href="#/packages">See coaching</a></div>
+  <div class="hero-meta load d4"><span>Coaching and nutrition</span><span>Works alongside your doctors</span></div>
+</section>
+
+${notHTML()}
+
+<section class="sec wrap">
+  <h2>Three ways to work together.</h2>
+  <div class="pkgs">${pkgCard('consult')}${pkgCard('coaching')}${pkgCard('private')}</div>
+  <p class="one-line">A plan. A coach. A coach at home.</p>
+</section>
+
+<section class="private">
+  ${PHOTO('pool_m','pool_w','','fill')}
+  <div class="wrap">
+    <h2>Private.<br>The whole routine, in person.</h2>
+    <div class="days"><span>10<small>days</small></span><span>20<small>days</small></span><span>30<small>days</small></span></div>
+    <p class="lede" style="margin-top:28px">Blood work, VO2 max, glucose and DEXA, reviewed with your doctors. Then every part of the day, done together, at your home.</p>
+    <div class="row" style="margin-top:28px"><a class="btn" href="#/private">Discover Private</a></div>
+  </div>
+</section>
+
+${proofHTML()}
+
+<section class="sec wrap">
+  <div class="split">
+    <figure class="portrait"><img src="${IMG.coach}" alt="Lorenzo on the training floor"></figure>
+    <div class="stack"><h2>Start with one conversation.</h2>
+      <p class="mute">Every plan begins with a one hour consultation, on where you are and where you want to be.</p>
+      <div class="row"><a class="btn fill" href="#/book">Book a consultation</a></div>
+    </div>
+  </div>
+</section>`;
+
+function pkgCard(k){const p=PKG[k];return `
+<a class="pkg glass" href="#/${k==='private'?'private':'packages/'+k}">
+  <h3>${p.name}</h3>
+  <p class="pkg-line">${p.line}</p>
+  <span class="go">${k==='private'?'Discover Private':'View details'}</span>
+</a>`}
+
+V.packages = () => `
+<section class="page-top wrap">
+  <h1>Coaching</h1>
+  <p class="lede">Coaching and nutrition, three ways. Every one starts with a consultation.</p>
+</section>
+<section class="sec wrap" style="padding-top:0">
+  <div class="pkgs" style="margin-top:0">${pkgCard('consult')}${pkgCard('coaching')}${pkgCard('private')}</div>
+  <p class="one-line">A plan. A coach. A coach at home.</p>
+</section>
+${aiHTML()}
+<section class="sec wrap"><p class="mute">Questions first? <a class="link" href="#/faq">Read the FAQ</a></p></section>`;
+
+V.detail = k => {const p=PKG[k];return `
+<section class="page-top wrap">
+  <a class="crumb" href="#/packages">Coaching</a>
+  <h1>${p.name}</h1>
+  <p class="lede">${p.line}</p>
+  <div class="row" style="margin-top:32px"><a class="btn fill" href="#/book">${k==='consult'?'Book your consultation':'Start with a consultation'}</a></div>
+</section>
+<section class="sec wrap" style="padding-top:24px">
+  <h2 ${H2}>Included.</h2>
+  <ul class="list" style="margin-top:28px">${p.items.map(i=>`<li><span>${i[0]}</span><span>${i[1]}</span></li>`).join('')}</ul>
+</section>
+<section class="sec wrap">
+  <div class="split"><h2 ${H2}>Who it's for.</h2><p class="lede">${p.who}</p></div>
+</section>
+<section class="sec wrap">
+  <h2 ${H2}>How it works.</h2>
+  <ol class="steps" style="margin-top:28px">${p.how.map(s=>`<li class="glass"><b>${s[0]}</b><p>${s[1]}</p></li>`).join('')}</ol>
+</section>
+${aiHTML()}
+<section class="sec wrap">
+  <ul class="list"><li><span>Investment</span><span>${p.invest}</span></li></ul>
+  <div class="row" style="margin-top:28px"><a class="btn fill" href="#/book">Book a consultation</a><a class="link" href="#/faq">Questions</a></div>
+</section>
+${k==='consult'?NEXT('#/packages/coaching','Want sessions every week?','Coaching'):NEXT('#/private','Go further','Private')}`};
+
+/* ---------- private ---------- */
+const DAY=[
+  ['Morning','Rest, measured','Sleep tracked and improved, and the why explained, so it keeps working after the last day.'],
+  ['Breakfast','Meals, together','Cooked together at home, or chosen together when you eat out. Accurate, personal, never a template.'],
+  ['Midday','What you take','Every supplement and medication reviewed, with a specialist wherever one belongs.'],
+  ['Afternoon','Training and recovery','Programmed daily around the schedule you already have. Hydration and recovery built in.'],
+  ['Evening','The mental side','How to approach a routine, and the values underneath it. The part that makes the rest stick.'],
+  ['All day','The reset','Designed together, so the routine you keep is one you chose.']
+];
+const TESTS=[
+  ['Advanced blood work','At home collection available. Results reviewed together with a doctor from the network.'],
+  ['VO2 max and RMR','Calories and training zones measured, not estimated from a formula.'],
+  ['Continuous glucose monitor','14 days of data on how you actually respond to meals, stress and sleep.'],
+  ['DEXA scan','Body composition, measured properly. Booked, organised and included.']
+];
+const HOUSE=[
+  ['Your kitchen','Your private chef or household staff trained, with a recipe book written for your home.'],
+  ['Your pantry','Gone through shelf by shelf, cleared, and restocked with good quality food.'],
+  ['Your groceries','A recurring order set up with your local delivery service, so the pantry stays right after the team leaves.'],
+  ['Your specialists','Doctors and industry professionals from the network, brought in for whatever needs solving.']
+];
+const TRAVEL=[
+  ['Jet lag protocol','Built around your real travel schedule: light, meals, sleep and training, timed.'],
+  ['Travel kit','Supplements, resistance bands, snacks and hotel workout instructions, packed and ready.']
+];
+
+V.private = () => `
+<section class="lux-hero wrap">
+  ${PHOTO('pool_p','pool_w','An infinity pool above the Hong Kong skyline','bleed')}
+  <a class="crumb" href="#/packages">Coaching</a>
+  <h1>Private</h1>
+  <p class="lede">A fully immersive deep dive, at your home, anywhere in the world. Every part of the day is worked on together, until the routine holds on its own.</p>
+  <div class="dur"><span>10<small>days</small></span><span>20<small>days</small></span><span>30<small>days</small></span></div>
+  <div class="row" style="margin-top:32px"><a class="btn fill" href="#/apply">Request Private</a></div>
+  <p class="tests-line">Advanced blood work · VO2 max & RMR · Continuous glucose · DEXA. <b>Every test included.</b></p>
+</section>
+
+<section class="chap wrap">
+  <div class="chap-h"><h2>Measured, not estimated.</h2><p class="lede">The plan is built on your numbers, and read with your doctors. Every test is arranged for you and included.</p></div>
+  <div class="feats">${TESTS.map(t=>`<div class="feat glass"><h3>${t[0]}</h3><p>${t[1]}</p></div>`).join('')}</div>
+</section>
+
+<section class="chap wrap">
+  <div class="chap-h"><h2>The house around you.</h2><p class="lede">A routine only lasts if home supports it. So home gets rebuilt too.</p></div>
+  <div class="feats">${HOUSE.map(t=>`<div class="feat glass"><h3>${t[0]}</h3><p>${t[1]}</p></div>`).join('')}</div>
+</section>
+
+<section class="chap wrap">
+  <div class="chap-h"><h2>A day inside it.</h2><p class="lede">Every part of the day, done together.</p></div>
+  <ul class="day">${DAY.map(d=>`<li><time>${d[0]}</time><b>${d[1]}</b><p>${d[2]}</p></li>`).join('')}</ul>
+</section>
+
+<section class="chap wrap">
+  <div class="chap-h"><h2>Built to travel.</h2><p class="lede">For people who are rarely in one city for long.</p></div>
+  <div class="feats">${TRAVEL.map(t=>`<div class="feat glass"><h3>${t[0]}</h3><p>${t[1]}</p></div>`).join('')}</div>
+</section>
+
+<section class="chap wrap">
+  <div class="blueprint glass">
+    <div><h3>The Blueprint.</h3><p class="lede" style="margin-top:18px">A personal, branded manual, printed and digital. Everything from the immersion, written down for you to keep.</p></div>
+    <div class="bp-tags"><span>Routine</span><span>Meals</span><span>Training</span><span>Recovery</span><span>Travel</span><span>Supplements</span></div>
+  </div>
+</section>
+
+<section class="chap wrap">
+  <div class="chap-h"><h2>By application.</h2><p class="lede">A small number of immersions run each year. Scans, labs, specialists and deliveries are booked and organised for you, and included.</p></div>
+  <ul class="list">
+    <li><span>Length</span><span>10, 20 or 30 days</span></li>
+    <li><span>Where</span><span>Your home, anywhere in the world</span></li>
+    <li><span>Between sessions</span><span>An AI coach trained by Lorenzo, included</span></li>
+    <li><span>Partner option</span><span>Your partner joins sessions and the meal plan, for an added fee</span></li>
+    <li><span>Travel</span><span>Covered by the client</span></li>
+    <li><span>Investment</span><span>${SHOW_PRIVATE_PRICE?PRIVATE_RANGE:'Confirmed on your call'}</span></li>
+  </ul>
+  <div class="row" style="margin-top:32px"><a class="btn fill" href="#/apply">Request Private</a></div>
+</section>
+${NEXT('#/gallery','See it in practice','Gallery')}`;
+
+V.method = () => `
+<section class="page-top wrap">
+  <h1>Method</h1>
+  <p class="lede">Find the purpose. Define the goal. Understand the time. Build the route.</p>
+</section>
+${notHTML()}
+<section class="sec wrap">
+  <ol class="stages">${STAGES.map((s,i)=>`<li><span class="n">${i+1}</span><h2>${s[0]}</h2><p class="lede">${s[1]}</p></li>`).join('')}</ol>
+</section>
+<section class="sec wrap"><p class="close-line">The science stays in the background. What you see is a plan that fits.</p></section>
+${NEXT('#/app','Next','How it works')}`;
+
+V.faq = () => `
+<section class="page-top wrap">
+  <h1>Questions</h1>
+  <p class="lede">The practical side, answered.</p>
+</section>
+<section class="sec wrap" style="padding-top:0">${faqHTML(FAQ)}</section>
+${NEXT('#/book','Ready?','Book a consultation')}`;
+
+V.about = () => `
+<section class="page-top wrap">
+  <h1>Lorenzo</h1>
+  <p class="lede">Coaching and nutrition. Clients worldwide.</p>
+</section>
+<section class="sec wrap">
+  <div class="split">
+    <figure class="portrait"><img src="${IMG.about}" alt="Lorenzo at sunset"></figure>
+    <div class="stack mute"><h2 ${H2} style="color:var(--ink)">Coaching for the other 23 hours.</h2>
+      <p>The work brings fitness and wellness together instead of focusing on one discipline. Eating well, sleeping well and strength training, shaped around real lives and real pressures.</p>
+      <p>Clients include executives, founders, artists and public figures, mostly between 45 and 70, coached in person and online. The practice also supports post operative rehabilitation, including endometriosis recovery.</p>
+    </div>
+  </div>
+  <div class="creds">
+    <div class="glass"><b>MSc</b><small>Nutrition</small></div>
+    <div class="glass"><b>BSc</b><small>Sports sciences</small></div>
+    <div class="glass"><b>6+ years</b><small>Coaching</small></div>
+    <div class="glass"><b>English</b><small>and Italian</small></div>
+  </div>
+</section>
+<section class="sec wrap">
+  <ul class="list">
+    <li><span>Works</span><span>Worldwide, online and in person</span></li>
+    <li><span>Focus</span><span>Coaching and nutrition</span></li>
+    <li><span>Instagram</span><span><a class="link" href="https://instagram.com/${IG}" target="_blank" rel="noopener">@${IG}</a></span></li>
+  </ul>
+</section>
+${NEXT('#/method','Next','The method')}`;
+
+V.gallery = () => `
+<section class="page-top wrap">
+  <h1>Gallery</h1>
+  <p class="lede">Training, travel and the days in between. New work added as it happens.</p>
+</section>
+<section class="sec wrap" style="padding-top:0"><div class="gal" id="gal">${GALLERY.map(galTile).join('')}</div></section>
+${NEXT('#/private','Go further','Private')}`;
+function bindGallery(){
+  const g=document.getElementById('gal'); if(!g) return;
+  document.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{ /* no filters with a small set */
+    document.querySelectorAll('[data-g]').forEach(x=>x.setAttribute('aria-pressed',x===b));
+    g.querySelectorAll('figure').forEach(f=>f.style.display=(b.dataset.g==='All'||f.dataset.cat===b.dataset.g)?'':'none');
+  });
+  g.querySelectorAll('video').forEach(v=>{v.onmouseenter=()=>v.play();v.onmouseleave=()=>v.pause()});
+}
+
+V.book = () => `
+<section class="page-top wrap" style="padding-block-end:32px">
+  <a class="crumb" href="#/packages/consult">Consult</a>
+  <h1 style="font-size:clamp(48px,12vw,110px)">Book</h1>
+  <p class="lede">Your first consultation. One hour, online or in person. ${PRICE.consult}.</p>
+</section>
+<section class="sec wrap" style="padding-top:0">${bookHTML()}</section>
+<section class="sec wrap"><p class="mute">Prefer to ask first? <a class="link" href="#/contact">Write to the team</a></p></section>`;
+
+
+
+V.contact = () => `
+<section class="page-top wrap">
+  <h1>Contact</h1>
+  <p class="lede">Questions, bookings, press. Every message is read by the team.</p>
+</section>
+<section class="sec wrap" style="padding-top:0">
+  <form class="form glass" id="contact" novalidate>
+    <div id="cbody">
+      <label class="field"><span>Name</span><input name="name" autocomplete="name" required><em class="err">Add your name.</em></label>
+      <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" required><em class="err">Add a valid email.</em></label>
+      <label class="field"><span>Interested in</span><select name="topic"><option>Consult</option><option>Coaching</option><option>Private</option><option>Referred by a client</option><option>Something else</option></select></label>
+      <label class="field"><span>Message</span><textarea name="msg" required></textarea><em class="err">Write a short message.</em></label>
+      <div class="form-foot"><span class="mute" style="font-size:14px">Replies within 48 hours</span><button class="btn fill" type="submit">Send message</button></div>
+    </div>
+  </form>
+</section>`;
+
+V.apply = () => `
+<section class="page-top wrap" style="padding-block-end:32px">
+  <a class="crumb" href="#/private">Private</a>
+  <h1 style="font-size:clamp(48px,12vw,110px)">Request</h1>
+</section>
+<section class="sec wrap" style="padding-top:0">
+  <div class="form glass" id="apply"></div>
+</section>`;
+
+V.notfound = () => `
+<section class="page-top wrap" style="min-height:80vh">
+  <h1>Lost</h1>
+  <p class="lede">This page doesn't exist.</p>
+  <div class="row" style="margin-top:28px"><a class="btn" href="#/">Back home</a></div>
+</section>`;
+
+/* ---------- app screens (Lorenzo's designs) ---------- */
+const SCREENS={"home": "images/screen_home.jpg", "coach": "images/screen_coach.jpg", "food": "images/screen_food.jpg"};
+const DEV=(k,cls,alt)=>`<div class="device ${cls||''}"><div class="screen"><img src="${SCREENS[k]}" alt="${alt||'A screen from the client app'}"></div></div>`;
+const FLOW=[
+  ['Consult','One hour together on your goals, routine, history, and bloodwork if you have it.'],
+  ['Your plan','Four weeks of training and four weeks of nutrition, written for you and delivered to your dashboard.'],
+  ['Every day','The app runs your sessions and meals. Between sessions, an AI coach trained by Lorenzo answers questions and flags the coach when a person is needed.'],
+  ['Every week','Progress is reviewed against loads, photos and how you feel. The plan moves with you.']
+];
+V.app = () => `
+<section class="page-top wrap">
+  <h1>How it works</h1>
+  <p class="lede">The plan is written for you. The app runs your day. Progress is reviewed together.</p>
+</section>
+<section class="sec wrap" style="padding-top:0">
+  <ol class="steps" style="grid-template-columns:1fr">${FLOW.map(s=>`<li class="glass"><b>${s[0]}</b><p>${s[1]}</p></li>`).join('')}</ol>
+</section>
+<section class="wrap">
+  <div class="show">${DEV('home','lg','Client home screen')}<div class="stack"><h2>Your session, written for you.</h2><p class="lede">Every block, set and load comes from your plan. Tick it off as you train. Travelling or sore, and the session adapts with the coach in the loop.</p></div></div>
+  <div class="show flip">${DEV('coach','lg','AI coach chat')}<div class="stack"><h2>An AI coach, trained by Lorenzo.</h2><p class="lede">Built from Lorenzo's own coaching, then tested until it answers the way Lorenzo would. It handles the daily questions using your plans, and passes anything medical straight to the coach.</p></div></div>
+  <div class="show">${DEV('food','lg','Nutrition screen')}<div class="stack"><h2>Food that fits your week.</h2><p class="lede">Targets follow your calendar. Business dinner, long flight, rest day. Two taps to log.</p></div></div>
+  <div class="show flip"><div class="stack" style="grid-column:1/-1"><h2>And the rest, once you're in.</h2><p class="lede">Live session tracking, booking time with the coach, and your progress over time. Clients see all of it on day one.</p></div></div>
+</section>
+${aiHTML()}
+${NEXT('#/packages','Next','Coaching')}`;
+
+/* ---------- apply flow ---------- */
+const A = {step:0, data:{goals:[],length:'',when:'',where:'',name:'',email:''}};
+try{const sv=JSON.parse(localStorage.getItem('lf-apply')||'null');if(sv&&sv.data&&sv.step<4){A.step=sv.step;Object.assign(A.data,sv.data)}}catch(e){}
+const GOALS=['Energy','Sleep','Body composition','Strength','Nutrition','A full reset'];
+function renderApply(){
+  const el=document.getElementById('apply'); if(!el) return;
+  try{localStorage.setItem('lf-apply',JSON.stringify(A))}catch(e){}
+  const s=A.step, d=A.data;
+  const prog=`<div class="prog">${[0,1,2,3].map(i=>`<i class="${i<=s?'on':''}"></i>`).join('')}</div>`;
+  let body='';
+  if(s===0) body=`<p class="step-label">Step 1 of 4</p><h3>What do you want to change?</h3>
+    <div class="chips">${GOALS.map(g=>`<button type="button" class="chip" data-goal="${g}" aria-pressed="${d.goals.includes(g)}">${g}</button>`).join('')}</div>
+    <p class="err-msg mute" style="margin-top:14px;font-size:14px;display:none;color:var(--err)">Pick at least one.</p>`;
+  if(s===1) body=`<p class="step-label">Step 2 of 4</p><h3>How long, and when?</h3>
+    <div class="chips" style="margin-bottom:26px">${['10 days','20 days','30 days'].map(g=>`<button type="button" class="chip" data-len="${g}" aria-pressed="${d.length===g}">${g}</button>`).join('')}</div>
+    <label class="field"><span>Preferred start</span><input type="month" id="when" value="${d.when}"><em class="err">Pick a month.</em></label>
+    <p class="err-msg" style="font-size:14px;display:none;color:var(--err)">Pick a length.</p>`;
+  if(s===2) body=`<p class="step-label">Step 3 of 4</p><h3>Where should the team meet you?</h3>
+    <label class="field"><span>City or residence</span><input id="where" placeholder="London, Monaco, on board..." value="${esc(d.where)}"><em class="err">Tell us where.</em></label>`;
+  if(s===3) body=`<p class="step-label">Step 4 of 4</p><h3>How do we reach you?</h3>
+    <label class="field"><span>Name</span><input id="nm" autocomplete="name" value="${esc(d.name)}"><em class="err">Add your name.</em></label>
+    <label class="field"><span>Email</span><input id="em" type="email" autocomplete="email" value="${esc(d.email)}"><em class="err">Add a valid email.</em></label>`;
+  if(s===4){el.innerHTML=`${prog.replace(/class=""/g,'class="on"')}<div class="done"><h3>Request sent.</h3><p class="mute">The team will call you to shape ${d.length||'your stay'} in ${esc(d.where)||'your location'}, and confirm the investment.</p><div class="row" style="margin-top:28px"><a class="btn" href="#/">Back home</a></div></div>`;return}
+  el.innerHTML=prog+body+`<div class="form-foot">${s>0?'<button type="button" class="back" id="aback">Back</button>':'<span></span>'}<button type="button" class="btn fill" id="anext">${s===3?'Send request':'Continue'}</button></div>`;
+  el.querySelectorAll('[data-goal]').forEach(b=>b.onclick=()=>{const g=b.dataset.goal;d.goals=d.goals.includes(g)?d.goals.filter(x=>x!==g):[...d.goals,g];b.setAttribute('aria-pressed',d.goals.includes(g))});
+  el.querySelectorAll('[data-len]').forEach(b=>b.onclick=()=>{d.length=b.dataset.len;el.querySelectorAll('[data-len]').forEach(x=>x.setAttribute('aria-pressed',x===b))});
+  const back=document.getElementById('aback'); if(back) back.onclick=()=>{A.step--;renderApply()};
+  document.getElementById('anext').onclick=()=>{
+    const bad=f=>{f.closest('.field').classList.add('bad')}; let ok=true;
+    el.querySelectorAll('.field').forEach(f=>f.classList.remove('bad'));
+    const em=el.querySelector('.err-msg'); if(em) em.style.display='none';
+    if(s===0&&!d.goals.length){em.style.display='block';ok=false}
+    if(s===1){const w=document.getElementById('when');d.when=w.value;if(!d.length){em.style.display='block';ok=false}if(!d.when){bad(w);ok=false}}
+    if(s===2){const w=document.getElementById('where');d.where=w.value.trim();if(!d.where){bad(w);ok=false}}
+    if(s===3){const n=document.getElementById('nm'),e=document.getElementById('em');d.name=n.value.trim();d.email=e.value.trim();if(!d.name){bad(n);ok=false}if(!/^\S+@\S+\.\S+$/.test(d.email)){bad(e);ok=false}}
+    if(ok){A.step++;renderApply()}
+  };
+}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+
+function bindContact(){
+  const f=document.getElementById('contact'); if(!f) return;
+  f.onsubmit=e=>{e.preventDefault();let ok=true;
+    f.querySelectorAll('.field').forEach(x=>x.classList.remove('bad'));
+    const n=f.name,m=f.email,t=f.msg;
+    if(!n.value.trim()){n.closest('.field').classList.add('bad');ok=false}
+    if(!/^\S+@\S+\.\S+$/.test(m.value.trim())){m.closest('.field').classList.add('bad');ok=false}
+    if(!t.value.trim()){t.closest('.field').classList.add('bad');ok=false}
+    if(ok) document.getElementById('cbody').innerHTML=`<div class="done"><h3>Message sent.</h3><p class="mute">The team replies within 48 hours.</p></div>`;
+  };
+}
+
+/* ---------- welcome back: pick up where you left off ---------- */
+function resumeState(){
+  try{
+    const bk=JSON.parse(localStorage.getItem('lf-book')||'null');
+    if(bk&&bk.done&&bk.date){const d=new Date(bk.date+'T12:00');if(d>=new Date(new Date().toDateString()))
+      return {t:'Your consultation request',d:d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'})+', '+bk.time,href:'#/packages/consult',cta:'What happens next'}}
+    const ap=JSON.parse(localStorage.getItem('lf-apply')||'null');
+    if(ap&&ap.step>0&&ap.step<4) return {t:'Your Private request',d:'Step '+(ap.step+1)+' of 4, saved',href:'#/apply',cta:'Continue'};
+    const en=JSON.parse(localStorage.getItem('lf-enq')||'null');
+    if(en&&en.what) return {t:'Your enquiry',d:en.what+', draft saved',href:'#/enquire',cta:'Finish it'};
+  }catch(e){}
+  return null;
+}
+function showResume(){
+  let seen=false,visits=0;
+  try{seen=sessionStorage.getItem('lf-seen')==='1';visits=+(localStorage.getItem('lf-visits')||0)}catch(e){}
+  if(seen) return;
+  try{sessionStorage.setItem('lf-seen','1');localStorage.setItem('lf-visits',String(visits+1))}catch(e){}
+  if(visits<1) return;
+  const r=resumeState(); if(!r) return;
+  const el=document.createElement('div');
+  el.className='resume glass';el.setAttribute('role','status');
+  el.innerHTML=`<div><small>Welcome back</small><b>${r.t}</b><span>${esc(r.d)}</span></div><a class="btn fill" href="${r.href}">${r.cta}</a><button type="button" class="x" aria-label="Dismiss"></button>`;
+  document.body.appendChild(el);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>el.classList.add('on')));
+  const close=()=>{el.classList.remove('on');setTimeout(()=>el.remove(),500)};
+  el.querySelector('.x').onclick=close; el.querySelector('a').addEventListener('click',close);
+  setTimeout(close,12000);
+}
+
+/* ---------- context aware bottom bar ---------- */
+const BAR={
+  private:['Private immersion','10, 20 or 30 days, by application','#/apply','Request'],
+  apply:null,
+  def:['Book a consultation','One hour, online or in person','#/book','Book']
+};
+function setBar(h){
+  const bar=document.getElementById('bar');
+  const c=(h==='/private'||h==='/gallery')?BAR.private:BAR.def;
+  bar.innerHTML=`<p>${c[0]}<br><span style="color:var(--ink)">${c[1]}</span></p><a class="btn fill" href="${c[2]}">${c[3]}</a>`;
+  const navc=document.querySelector('.nav-cta');
+  if(navc){navc.textContent=h==='/private'?'Request':'Book';navc.setAttribute('href',h==='/private'?'#/apply':'#/book')}
+}
+
+/* ---------- reading progress on long pages ---------- */
+const readProg=document.createElement('div');readProg.className='readbar';readProg.setAttribute('aria-hidden','true');document.body.appendChild(readProg);
+function onRead(){
+  const long=['/private','/method','/app'].includes((location.hash||'#/').slice(1));
+  const max=document.documentElement.scrollHeight-innerHeight;
+  readProg.style.transform=`scaleX(${long&&max>0?Math.min(1,scrollY/max):0})`;
+}
+addEventListener('scroll',onRead,{passive:true});
+
+/* ---------- router ---------- */
+const view=document.getElementById('view');
+function route(){
+  const h=(location.hash||'#/').slice(1);
+  let html, key=h;
+  if(h==='/'||h==='') {html=V.home();key='home'}
+  else if(h==='/packages') html=V.packages();
+  else if(h==='/packages/consult') html=V.detail('consult');
+  else if(h==='/packages/coaching') html=V.detail('coaching');
+  else if(h==='/private') html=V.private();
+  else if(h==='/method') html=V.method();
+  else if(h==='/app') html=V.app();
+  else if(h==='/enquire'||h==='/fit') html=V.contact();
+  else if(h==='/faq') html=V.faq();
+  else if(h==='/gallery') html=V.gallery();
+  else if(h==='/book') html=V.book();
+  else if(h==='/about') html=V.about();
+  else if(h==='/contact') html=V.contact();
+  else if(h==='/apply') {html=V.apply()}
+  else html=V.notfound();
+  view.classList.add('out');
+  setTimeout(()=>{
+    view.innerHTML=html;
+    document.body.classList.toggle('is-home',key==='home');
+    document.body.classList.toggle('is-lux',h==='/private');
+    document.getElementById('bar').classList.toggle('hide',['/apply','/contact','/fit','/enquire','/book'].includes(h));
+    document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+h));
+    window.scrollTo(0,0);
+    renderApply(); bindContact(); bindEnquire(); renderBook(); bindGallery(); setBar(h); syncTheme(); onRead();
+    view.classList.remove('out');
+    document.body.classList.remove('ready'); void document.body.offsetWidth;
+    requestAnimationFrame(()=>document.body.classList.add('ready'));
+    closeMenu(); onScroll();
+  }, view.innerHTML ? 260 : 0);
+}
+window.addEventListener('hashchange',route);
+
+/* nav + menu */
+const nav=document.getElementById('nav');
+function onScroll(){nav.classList.toggle('solid',window.scrollY>40||!document.body.classList.contains('is-home'))}
+window.addEventListener('scroll',onScroll,{passive:true});
+const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+function closeMenu(){document.body.classList.remove('menu-open');burger.setAttribute('aria-expanded','false');menu.setAttribute('aria-hidden','true')}
+burger.onclick=()=>{const o=!document.body.classList.contains('menu-open');document.body.classList.toggle('menu-open',o);burger.setAttribute('aria-expanded',String(o));menu.setAttribute('aria-hidden',String(!o));
+  menu.querySelectorAll('a').forEach((a,i)=>a.style.transitionDelay=o?(80+i*60)+'ms':'0ms')};
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+
+/* theme */
+function setTheme(t){document.documentElement.setAttribute('data-theme',t);try{localStorage.setItem('lf-theme',t)}catch(e){}
+  document.querySelectorAll('.toggle button').forEach(b=>{b.setAttribute('aria-pressed',b.dataset.t===t);b.onclick=()=>setTheme(b.dataset.t)});
+  document.querySelector('meta[name=theme-color]').setAttribute('content',t==='day'?'#E7EBE7':'#07090A')}
+function syncTheme(){setTheme('night')}
+syncTheme();
+
+/* ---------- water light (WebGL) ---------- */
+(function(){
+  const c=document.getElementById('water');
+  const gl=c.getContext('webgl',{antialias:false,premultipliedAlpha:false,preserveDrawingBuffer:true});
+  if(!gl){c.style.background='radial-gradient(120% 80% at 70% 20%,rgba(228,194,140,.25),transparent 60%)';return}
+  const vs=`attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}`;
+  const fs=`precision mediump float;uniform vec2 r;uniform float t;uniform float day;
+  float caustic(vec2 uv,float time){
+    vec2 p=mod(uv*6.2831,6.2831)-250.;vec2 i=p;float c=1.;float inten=.005;
+    for(int n=0;n<5;n++){float tt=time*(1.-(3.5/float(n+1)));
+      i=p+vec2(cos(tt-i.x)+sin(tt+i.y),sin(tt-i.y)+cos(tt+i.x));
+      c+=1./length(vec2(p.x/(sin(i.x+tt)/inten),p.y/(cos(i.y+tt)/inten)));}
+    c/=5.;c=1.17-pow(c,1.4);return pow(abs(c),8.);}
+  float h(vec2 p){return fract(sin(dot(p,vec2(12.9898,78.233)))*43758.5453);}
+  void main(){
+    vec2 uv=gl_FragCoord.xy/r;vec2 q=uv;q.x*=r.x/r.y;
+    float time=t*.28+23.;
+    vec2 warp=q*.62+vec2(.0,time*.012);
+    float c=caustic(warp,time);
+    float c2=caustic(warp*1.03+.013,time+.35);
+    float light=clamp(mix(c,c2,.5),0.,1.);
+    float fall=smoothstep(1.25,.05,length((uv-vec2(.72,.92))*vec2(1.,1.4)));
+    vec3 night=vec3(.027,.035,.039)+vec3(.02,.05,.055)*fall;
+    vec3 gold=vec3(.894,.761,.549);
+    vec3 colN=night+gold*light*(.22+.9*fall);
+    vec3 base=vec3(.905,.922,.905);
+    vec3 colD=base-vec3(.08,.04,.02)*(1.-fall)*.6+vec3(1.,.93,.78)*light*(.28+.55*fall)-vec3(.05,.02,.0)*(1.-light)*.25;
+    vec3 col=mix(colN,colD,day);
+    col+=(h(gl_FragCoord.xy+t)-.5)*.018;
+    gl_FragColor=vec4(col,1.);}`;
+  function sh(type,src){const s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);return s}
+  const pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(pr);gl.useProgram(pr);
+  const b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+  const loc=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+  const ur=gl.getUniformLocation(pr,'r'),ut=gl.getUniformLocation(pr,'t'),ud=gl.getUniformLocation(pr,'day');
+  const scale=.5; let dayMix=document.documentElement.getAttribute('data-theme')==='day'?1:0;
+  function size(){const w=innerWidth,h=innerHeight;c.width=Math.max(1,Math.round(w*scale));c.height=Math.max(1,Math.round(h*scale));gl.viewport(0,0,c.width,c.height)}
+  size();addEventListener('resize',size);
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const t0=performance.now();
+  function draw(now){
+    const fixed=window.__t!==undefined;
+    const tt=fixed?window.__t:(now-t0)/1000;
+    const target=document.documentElement.getAttribute('data-theme')==='day'?1:0;
+    dayMix+=(target-dayMix)*(fixed?1:.06);
+    gl.uniform2f(ur,c.width,c.height);gl.uniform1f(ut,reduce?4.:tt);gl.uniform1f(ud,dayMix);
+    gl.drawArrays(gl.TRIANGLES,0,3);
+    return target;
+  }
+  function loop(now){
+    if(window.__t!==undefined) return;
+    const target=draw(now);
+    if(!reduce||Math.abs(target-dayMix)>.001) requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+  window.__renderWater=()=>draw(performance.now());
+})();
+
+/* ---------- editable content: content/site.json (edited by Lorenzo in Pages CMS) ---------- */
+function applyContent(c){
+  if(!c||typeof c!=='object') return;
+  const str=v=>typeof v==='string'&&v.trim()!=='';
+  const list=(a,f)=>Array.isArray(a)?a.map(f).filter(Boolean):null;
+  if(c.prices){['consult','coaching','private'].forEach(k=>{if(str(c.prices[k]))PRICE[k]=esc(c.prices[k])});
+    if(str(c.prices.privateRange))PRIVATE_RANGE=esc(c.prices.privateRange);
+    if(typeof c.prices.showPrivateRange==='boolean')SHOW_PRIVATE_PRICE=c.prices.showPrivateRange;}
+  if(c.packages){['consult','coaching','private'].forEach(k=>{const p=c.packages[k];if(!p||!PKG[k])return;
+    if(str(p.line))PKG[k].line=esc(p.line); if(str(p.investment)&&k!=='private')PKG[k].invest=esc(p.investment);});}
+  if(c.contact){ if(str(c.contact.email)&&c.contact.email.includes('@')){const e=c.contact.email.trim().split('@');MAIL.splice(0,MAIL.length,e[0],e[1]);}
+    if(str(c.contact.instagram))IG=c.contact.instagram.trim().replace(/^@/,'').replace(/^https?:\/\/(www\.)?instagram\.com\//,'').replace(/\/$/,''); }
+  const nl=list(c.thisIsNot,x=>str(x)?esc(x):(x&&str(x.line)?esc(x.line):null)); if(nl&&nl.length)NOT.splice(0,NOT.length,...nl);
+  if(str(c.thisIsNotClose))NOT_CLOSE=esc(c.thisIsNotClose);
+  const st=list(c.stages,x=>x&&str(x.title)?[esc(x.title),esc(x.text||'')]:null); if(st&&st.length)STAGES.splice(0,STAGES.length,...st);
+  const te=list(c.testimonials,x=>x&&str(x.quote)?{quote:esc(x.quote),who:esc(x.who||'')}:null); if(te)TESTIMONIALS.splice(0,TESTIMONIALS.length,...te);
+  const fq=list(c.faq,x=>x&&str(x.question)&&str(x.answer)?[esc(x.question),esc(x.answer)]:null); if(fq&&fq.length)FAQ.splice(0,FAQ.length,...fq);
+  const cr=list(c.credentials,x=>x&&str(x.title)?[esc(x.title),esc(x.subtitle||'')]:null); if(cr&&cr.length)CREDS.splice(0,CREDS.length,...cr);
+  if(c.photos)Object.keys(IMG).forEach(k=>{const v=c.photos[k];if(str(v))IMG[k]=v.replace(/^\//,'')});
+}
+function syncStatic(){
+  document.querySelectorAll('[data-ig-text]').forEach(e=>e.textContent='@'+IG);
+  document.querySelectorAll('[data-ig-href]').forEach(e=>e.href='https://instagram.com/'+IG);
+}
+fetch('content/site.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)
+  .then(c=>{try{applyContent(c)}catch(e){console.warn('content',e)} syncStatic(); route();});
+</script>
+</body>
+</html>
