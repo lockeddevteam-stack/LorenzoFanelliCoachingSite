@@ -554,6 +554,30 @@ body.is-home #water,body.is-lux #water{opacity:.34}
 @media (min-width:760px){.private::before{left:50%;right:auto;width:100vw;transform:translateX(-50%);background:linear-gradient(90deg,rgba(7,9,10,.85) 0%,rgba(7,9,10,.5) 45%,rgba(7,9,10,0) 75%)}}
 .private::before{-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 16%);mask-image:linear-gradient(180deg,transparent 0%,#000 16%)}
 @media (max-width:759px){.private::before{-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 22%);mask-image:linear-gradient(180deg,transparent 0%,#000 22%)}}
+
+/* v11: coach dashboard page */
+.dash-hero{display:grid;gap:28px;padding-block:8px 24px}
+.laptop{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#0b0d0e;box-shadow:0 40px 90px rgba(0,0,0,.5)}
+.laptop .lbar{height:30px;display:flex;align-items:center;gap:7px;padding:0 14px;border-bottom:1px solid var(--line)}
+.laptop .lbar i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.14)}
+.laptop video,.laptop img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;background:#050506}
+.dscreens{display:grid;gap:0}
+.dscreen{display:grid;gap:22px;padding-block:44px;border-top:1px solid var(--line)}
+.dscreen .kick{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-ink)}
+.dscreen h2{font-size:clamp(28px,5vw,40px);line-height:1.08;margin-top:6px;text-wrap:balance}
+.dscreen p.lede{margin-top:12px}
+.dshot{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.dshot img{display:block;width:100%;height:auto}
+.dshot:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media (min-width:1000px){.dscreen{grid-template-columns:320px 1fr;gap:48px;align-items:start}.dscreen .copy{position:sticky;top:110px}}
+.dnote{font-size:14px;color:var(--faint);padding-top:28px;border-top:1px solid var(--line)}
+#dlb{position:fixed;inset:0;z-index:80;background:rgba(5,6,7,.94);display:none;align-items:center;justify-content:center;padding:16px;cursor:zoom-out}
+#dlb.on{display:flex}
+#dlb img{max-width:100%;max-height:100%;border-radius:10px}
+.screen video{width:100%;height:100%;object-fit:cover;display:block;background:#050506}
+.dayvid{display:grid;gap:32px;padding-block:56px;border-top:1px solid var(--line)}
+@media (min-width:760px){.dayvid{grid-template-columns:1fr 1fr;align-items:center}}
+.dayvid .device{margin:0 auto}
 </style>
 </head>
 <body>
@@ -572,7 +596,7 @@ body.is-home #water,body.is-lux #water{opacity:.34}
 </header>
 
 <div class="menu" id="menu" aria-hidden="true">
-  <a href="#/method">Method</a><a href="#/app">How it works</a><a href="#/packages">Coaching</a><a href="#/private">Private</a><a href="#/gallery">Gallery</a><a href="#/about">About</a><a href="#/faq">FAQ</a><a href="#/book">Book</a>
+  <a href="#/method">Method</a><a href="#/app">How it works</a><a href="#/dashboard">Dashboard</a><a href="#/packages">Coaching</a><a href="#/private">Private</a><a href="#/gallery">Gallery</a><a href="#/about">About</a><a href="#/faq">FAQ</a><a href="#/book">Book</a>
   <small>Coaching and nutrition, worldwide. <span data-ig-text>@lorefanecoach</span></small>
 </div>
 
@@ -583,7 +607,7 @@ body.is-home #water,body.is-lux #water{opacity:.34}
     <div class="foot-mark">Lorenzo Fanelli</div>
     <p class="mute" style="margin-top:14px;max-width:32ch">Coaching and nutrition. Online and in person, worldwide.</p>
     <div class="foot-grid">
-      <div><a href="#/method">Method</a><a href="#/app">How it works</a><a href="#/packages">Coaching</a><a href="#/private">Private</a></div>
+      <div><a href="#/method">Method</a><a href="#/app">How it works</a><a href="#/dashboard">Dashboard</a><a href="#/packages">Coaching</a><a href="#/private">Private</a></div>
       <div><a href="#/gallery">Gallery</a><a href="#/book">Book</a><a href="#/faq">FAQ</a><a href="#/about">About</a><a href="#/contact">Contact</a><a data-ig-href href="https://instagram.com/lorefanecoach" target="_blank" rel="noopener">Instagram</a></div>
     </div>
     <div class="foot-base">
@@ -1141,13 +1165,53 @@ V.app = () => `
   <ol class="steps" style="grid-template-columns:1fr">${FLOW.map(s=>`<li class="glass"><b>${s[0]}</b><p>${s[1]}</p></li>`).join('')}</ol>
 </section>
 <section class="wrap">
+  <div class="dayvid"><div class="device lg"><div class="screen"><video src="videos/client-day.mp4" poster="images/dashboard/client-day-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-label="A day in the client app"></video></div></div><div class="stack"><h2 style="font-size:clamp(36px,8vw,60px)">A day as a client.</h2><p class="lede">Readiness first thing, the day's food, a quick question for the coach, the session set by set, then progress and the weekly check-in. All in one app.</p></div></div>
   <div class="show">${DEV('home','lg','Client home screen')}<div class="stack"><h2>Your session, written for you.</h2><p class="lede">Every block, set and load comes from your plan. Tick it off as you train. Travelling or sore, and the session adapts with the coach in the loop.</p></div></div>
   <div class="show flip">${DEV('coach','lg','AI coach chat')}<div class="stack"><h2>An AI coach, trained by Lorenzo.</h2><p class="lede">Built from Lorenzo's own coaching, then tested until it answers the way Lorenzo would. It handles the daily questions using your plans, and passes anything medical straight to the coach.</p></div></div>
   <div class="show">${DEV('food','lg','Nutrition screen')}<div class="stack"><h2>Food that fits your week.</h2><p class="lede">Targets follow your calendar. Business dinner, long flight, rest day. Two taps to log.</p></div></div>
   <div class="show flip"><div class="stack" style="grid-column:1/-1"><h2>And the rest, once you're in.</h2><p class="lede">Live session tracking, booking time with the coach, and your progress over time. Clients see all of it on day one.</p></div></div>
 </section>
 ${aiHTML()}
-${NEXT('#/packages','Next','Coaching')}`;
+${NEXT('#/dashboard','Next','The coach\'s side')}`;
+
+/* ---------- coach dashboard ---------- */
+const DASH=[
+  ['01-today','Today','The morning, as a worklist.','Every row is something to do today, ordered by risk: who has gone quiet, who missed a check-in, which form check is near its deadline, who is waiting for a program. Each row has a one-tap action. In-person sessions and the wins since yesterday sit alongside.'],
+  ['02-clients','Clients','Every client, sorted by who needs attention.','Health, adherence, last session and plan for every client at a glance. Filter to the ones who need attention, send a message in a click, and invite a new client with the plan already attached.'],
+  ['03-client-james','Client','One client, everything on one page.','Goal, week of the block, adherence, bodyweight and estimated max up top. Private notes the client never sees, and a timeline of every session, check-in, record and change.'],
+  ['04-program-builder','Program builder','A 12-week block, written from the keyboard.','Weeks on the left, the day in the middle, the exercise library on the right. Type a lift and tab through sets, reps, rest and load. Duplicate a week with +2.5 kg in one step. Editing a live block never rewrites what a client already logged.'],
+  ['05-check-ins','Check-ins','Weekly reviews in minutes.','One check-in at a time, with the week already on screen: weight trend, adherence, sleep, energy and photos. Adjust calories or schedule a deload in one tap. Any drafted reply is clearly marked, and the coach approves every word before it goes.'],
+  ['06-form-check-review','Form checks','Coached from the video.','Slow a lift to quarter speed, step frame by frame, draw on it and pin a note to the exact second. Add a voice note. The reply deadline sits at the top, so every promise to a client is kept.'],
+  ['07-inbox','Inbox','Every conversation, the urgent ones first.','Threads that need a human rise to the top. When the AI coach meets a pain or injury question, it stops, gives no advice and passes it to the coach. Any AI reply can be corrected, and the correction is remembered.'],
+  ['08-schedule','Schedule','In-person sessions, and the rules around them.','The week at a glance with every booking, availability and blocked time. Notice periods, the cancellation window, travel time between sessions and a weekly cap per client are all set here.'],
+  ['10-ai-coach','AI coach','An AI coach trained by Lorenzo, on the coach\'s terms.','It works from the coach\'s own method. What it knows about each client is visible, every reply can be reviewed and corrected, and pain, injury, medication and other medical topics are hard stops that cannot be switched off. One switch pauses it for everyone.']
+];
+V.dashboard = () => `
+<section class="page-top wrap">
+  <h1>The coach's side.</h1>
+  <p class="lede">Behind every client app sits one dashboard. It shows who needs attention each morning, holds every program, check-in and conversation, and keeps the AI coach in line.</p>
+</section>
+<section class="wrap dash-hero">
+  <div class="laptop"><div class="lbar"><i></i><i></i><i></i></div>
+    <video src="videos/coach-day.mp4" poster="images/dashboard/coach-day-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-label="A day on the coach dashboard"></video></div>
+</section>
+<section class="wrap dscreens">
+  ${DASH.map((d,i)=>`<div class="dscreen">
+    <div class="copy"><p class="kick">${d[1]}</p><h2>${d[2]}</h2><p class="lede">${d[3]}</p></div>
+    <button type="button" class="dshot" data-full="images/dashboard/${d[0]}.jpg" aria-label="Open ${d[1]} full size"><img src="images/dashboard/${d[0]}-sm.jpg" srcset="images/dashboard/${d[0]}-sm.jpg 900w, images/dashboard/${d[0]}.jpg 1800w" sizes="(min-width:1000px) 800px, 100vw" alt="Coach dashboard: ${d[1]}" loading="${i<2?'eager':'lazy'}" width="1800" height="1125"></button>
+  </div>`).join('')}
+  <p class="dnote">Shown with demo clients and data.</p>
+</section>
+${NEXT('#/app','See the client side','How it works')}
+<div id="dlb" role="dialog" aria-modal="true" aria-label="Full size screen"><img alt=""></div>`;
+function bindDash(){
+  const lb=document.getElementById('dlb'); if(!lb) return;
+  const im=lb.querySelector('img'); let last=null;
+  const close=()=>{lb.classList.remove('on');document.body.style.overflow='';im.removeAttribute('src');if(last)last.focus()};
+  document.querySelectorAll('.dshot').forEach(b=>b.onclick=()=>{last=b;im.src=b.dataset.full;im.alt=b.querySelector('img').alt;lb.classList.add('on');document.body.style.overflow='hidden'});
+  lb.onclick=close;
+  document.onkeydown=e=>{if(e.key==='Escape'&&lb.classList.contains('on'))close()};
+}
 
 /* ---------- apply flow ---------- */
 const A = {step:0, data:{goals:[],length:'',when:'',where:'',name:'',email:''}};
@@ -1248,7 +1312,7 @@ function setBar(h){
 /* ---------- reading progress on long pages ---------- */
 const readProg=document.createElement('div');readProg.className='readbar';readProg.setAttribute('aria-hidden','true');document.body.appendChild(readProg);
 function onRead(){
-  const long=['/private','/method','/app'].includes((location.hash||'#/').slice(1));
+  const long=['/private','/method','/app','/dashboard'].includes((location.hash||'#/').slice(1));
   const max=document.documentElement.scrollHeight-innerHeight;
   readProg.style.transform=`scaleX(${long&&max>0?Math.min(1,scrollY/max):0})`;
 }
@@ -1266,6 +1330,7 @@ function route(){
   else if(h==='/private') html=V.private();
   else if(h==='/method') html=V.method();
   else if(h==='/app') html=V.app();
+  else if(h==='/dashboard') html=V.dashboard();
   else if(h==='/enquire'||h==='/fit') html=V.contact();
   else if(h==='/faq') html=V.faq();
   else if(h==='/gallery') html=V.gallery();
@@ -1282,7 +1347,7 @@ function route(){
     document.getElementById('bar').classList.toggle('hide',['/apply','/contact','/fit','/enquire','/book'].includes(h));
     document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+h));
     window.scrollTo(0,0);
-    renderApply(); bindContact(); bindEnquire(); renderBook(); bindGallery(); setBar(h); syncTheme(); onRead();
+    renderApply(); bindContact(); bindEnquire(); renderBook(); bindGallery(); bindDash(); setBar(h); syncTheme(); onRead();
     view.classList.remove('out');
     document.body.classList.remove('ready'); void document.body.offsetWidth;
     requestAnimationFrame(()=>document.body.classList.add('ready'));
