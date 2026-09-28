@@ -554,6 +554,15 @@ body.is-home #water,body.is-lux #water{opacity:.34}
 @media (min-width:760px){.private::before{left:50%;right:auto;width:100vw;transform:translateX(-50%);background:linear-gradient(90deg,rgba(7,9,10,.85) 0%,rgba(7,9,10,.5) 45%,rgba(7,9,10,0) 75%)}}
 .private::before{-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 16%);mask-image:linear-gradient(180deg,transparent 0%,#000 16%)}
 @media (max-width:759px){.private::before{-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 22%);mask-image:linear-gradient(180deg,transparent 0%,#000 22%)}}
+
+/* v11: client app screens on Coaching */
+.phones{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 0 20px;margin-top:28px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.phones::-webkit-scrollbar{display:none}
+.phones figure{flex:0 0 auto;width:min(62vw,230px);margin:0;scroll-snap-align:start;display:grid;gap:12px}
+.phones .device{width:100%}
+.phones figcaption{font-size:14px;color:var(--mute);text-align:center}
+@media (min-width:1000px){.phones{display:grid;grid-template-columns:repeat(5,1fr);overflow:visible}.phones figure{width:auto}}
+.phones-note{font-size:14px;color:var(--faint);margin-top:4px}
 </style>
 </head>
 <body>
@@ -911,6 +920,14 @@ V.packages = () => `
 ${aiHTML()}
 <section class="sec wrap"><p class="mute">Questions first? <a class="link" href="#/faq">Read the FAQ</a></p></section>`;
 
+
+const PHONE=[['today','Today'],['nutrition','Nutrition'],['session','Session'],['progress','Progress'],['checkin','Weekly check-in']];
+const phonesHTML=()=>`<section class="sec wrap">
+  <h2 ${H2}>On your phone.</h2>
+  <p class="lede" style="margin-top:14px">Your day, your food, every session and your progress, in one app.</p>
+  <div class="phones">${PHONE.map(x=>`<figure><div class="device"><div class="screen"><img src="images/app/${x[0]}.jpg" alt="Client app: ${x[1]}" loading="lazy" width="390" height="844"></div></div><figcaption>${x[1]}</figcaption></figure>`).join('')}</div>
+  <p class="phones-note">Demo screens with sample data.</p>
+</section>`;
 V.detail = k => {const p=PKG[k];return `
 <section class="page-top wrap">
   <a class="crumb" href="#/packages">Coaching</a>
@@ -922,6 +939,7 @@ V.detail = k => {const p=PKG[k];return `
   <h2 ${H2}>Included.</h2>
   <ul class="list" style="margin-top:28px">${p.items.map(i=>`<li><span>${i[0]}</span><span>${i[1]}</span></li>`).join('')}</ul>
 </section>
+${k==='coaching'?phonesHTML():''}
 <section class="sec wrap">
   <div class="split"><h2 ${H2}>Who it's for.</h2><p class="lede">${p.who}</p></div>
 </section>
