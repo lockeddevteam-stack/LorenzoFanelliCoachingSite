@@ -812,6 +812,7 @@ const FAQ=[
  ['What if I travel a lot?','Tell the app where you are. Sessions switch to the equipment you have, and food guidance follows your calendar.'],
  ['Where do I start?','With a one hour consultation. It is the first step for every plan, including coaching.'],
  ['I was referred by a client.','Mention their name when you book and you will be offered a priority call.'],
+ ['Does the consultation count toward monthly coaching?','No. The consultation is a one hour session, paid once. The monthly coaching price is confirmed after it.'],
  ['How do payments work?','The consultation is paid once. Coaching is monthly and you can cancel before your next billing date. Private immersions are quoted after a call, with travel covered by the client.']
 ];
 const faqHTML=(list)=>`<div class="faq">${list.map(f=>`<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join('')}</div>`;
@@ -1147,7 +1148,7 @@ V.detail = k => {const p=PKG[k],m=DETAIL_MEDIA[k];return `
     <aside class="bookcard glass">
       <span class="eyebrow">${k==='consult'?'Start here':'Starts with a consultation'}</span>
       <h3>${p.name}</h3>
-      <ul class="list"><li><span>Investment</span><span>${p.invest}</span></li><li><span>First step</span><span>One hour consultation</span></li><li><span>Where</span><span>Online or in person</span></li></ul>
+      <ul class="list"><li><span>Investment</span><span>${p.invest}</span></li><li><span>First step</span><span>${k==='consult'?'One hour consultation':'One hour consultation, '+PRICE.consult+', paid separately'}</span></li><li><span>Where</span><span>Online or in person</span></li></ul>
       <a class="btn fill" href="#/book">Book a consultation</a>
       <a class="link" href="#/faq" style="justify-self:center;font-size:15px">Questions first</a>
     </aside>
