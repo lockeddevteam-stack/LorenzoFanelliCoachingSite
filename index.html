@@ -563,6 +563,77 @@ body.is-home #water,body.is-lux #water{opacity:.34}
 .phones figcaption{font-size:14px;color:var(--mute);text-align:center}
 @media (min-width:1000px){.phones{display:grid;grid-template-columns:repeat(5,1fr);overflow:visible}.phones figure{width:auto}}
 .phones-note{font-size:14px;color:var(--faint);margin-top:4px}
+
+/* v12: structure round. Media placeholders, split hero, offers, sticky booking */
+body.is-home .nav:not(.solid) .mark{opacity:1}
+.media{position:relative;margin:0;border-radius:24px;overflow:hidden;border:1px dashed rgba(228,194,140,.42);aspect-ratio:var(--ar,16/9);display:flex;align-items:flex-end;max-width:100%;
+  background:radial-gradient(120% 90% at 85% 0%,rgba(228,194,140,.12),transparent 60%),repeating-linear-gradient(135deg,rgba(255,255,255,.028) 0 2px,transparent 2px 16px),#0b0d0e}
+.media.r169{--ar:16/9}.media.r45{--ar:4/5}.media.r219{--ar:21/9}.media.r11{--ar:1/1}.media.r916{--ar:9/16}
+.media-in{padding:clamp(20px,3vw,34px);display:grid;gap:12px;max-width:52ch}
+.media-tag{display:inline-flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink)}
+.media-tag svg{width:34px;height:34px;flex:none}
+.media p{font-family:var(--serif);font-size:clamp(19px,2vw,27px);line-height:1.28;color:var(--ink);margin:0;text-wrap:pretty}
+.media small{font-size:13px;color:var(--faint)}
+@media (max-width:759px){.media.r219{--ar:4/5}.media.r169.tall-m{--ar:4/5}}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink)}
+.hero2{display:grid;gap:40px;align-items:center;padding-block:120px 64px}
+.hero2 h1{font-size:clamp(46px,7vw,100px);line-height:.98;letter-spacing:-.02em;margin-top:18px;text-wrap:balance}
+.hero2 .lede{margin-top:24px;color:var(--ink);max-width:40ch}
+.hero2 .row{margin-top:32px}
+.proofline{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px 28px;font-size:14px;color:var(--mute)}
+.proofline b{color:var(--ink);font-weight:500}
+@media (min-width:1000px){.hero2{grid-template-columns:1.05fr 1fr;gap:64px;min-height:88vh;padding-block:112px 56px}}
+.sec-h{display:grid;gap:16px;margin-bottom:44px}
+.sec-h h2{font-size:clamp(38px,6vw,72px);line-height:1.02;text-wrap:balance}
+.sec-h .lede{max-width:48ch}
+@media (min-width:1000px){.sec-h.two{grid-template-columns:1fr 1fr;align-items:end;gap:64px}}
+.offers{display:grid;gap:14px}
+@media (min-width:760px){.offers.two{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.offers.three{grid-template-columns:repeat(3,1fr)}}
+.offer{padding:32px 28px;display:flex;flex-direction:column;gap:16px;min-height:100%}
+.offer .tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink)}
+.offer h3{font-size:clamp(32px,3vw,40px)}
+.offer .line{font-size:17px;line-height:1.5;color:var(--ink)}
+.offer ul{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.offer li{padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--mute)}
+.offer .row{margin-top:auto;padding-top:10px}
+.offer.feature{border-color:rgba(228,194,140,.55);background:linear-gradient(180deg,rgba(228,194,140,.09),var(--glass))}
+.how{list-style:none;padding:0;margin:0;display:grid;gap:12px;counter-reset:h}
+.how li{padding:26px;counter-increment:h;display:grid;gap:8px;align-content:start}
+.how li::before{content:counter(h);font-family:var(--serif);font-size:34px;line-height:1;color:var(--gold-ink)}
+.how b{font-weight:500;font-size:17px}.how p{color:var(--mute);font-size:15px;margin:0}
+@media (min-width:760px){.how{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1000px){.how.four{grid-template-columns:repeat(4,1fr)}.how.three{grid-template-columns:repeat(3,1fr)}}
+.band{display:grid;gap:36px;align-items:center}
+.band h2{font-size:clamp(40px,6vw,76px);line-height:1;text-wrap:balance;margin-top:14px}
+.band .lede{margin-top:22px}
+@media (min-width:1000px){.band{grid-template-columns:1.25fr 1fr;gap:64px}.band.flip > .media{order:2}}
+.dayset{display:flex;gap:10px;margin-top:28px}
+.dayset span{flex:1;max-width:120px;padding:16px 10px;border:1px solid var(--line);border-radius:18px;text-align:center;font-family:var(--serif);font-size:34px;line-height:1}
+.dayset small{display:block;font-family:var(--sans);font-size:13px;color:var(--mute);margin-top:6px}
+.testline{margin-top:22px;font-size:14px;color:var(--mute)}.testline b{color:var(--gold-ink);font-weight:400}
+.qgrid{display:grid;gap:14px}
+@media (min-width:1000px){.qgrid{grid-template-columns:repeat(3,1fr)}}
+.qph{padding:30px 28px;border:1px dashed rgba(228,194,140,.38);border-radius:24px;display:grid;gap:14px;align-content:start}
+.qph .media-tag{font-size:11px}
+.qph p{font-family:var(--serif);font-size:23px;line-height:1.3;color:var(--mute);margin:0}
+.qph cite{font-style:normal;font-size:14px;color:var(--faint)}
+.cta-band{padding-block:clamp(88px,11vw,150px);text-align:center;display:grid;justify-items:center;gap:22px;border-top:1px solid var(--line)}
+.cta-band h2{font-size:clamp(42px,7vw,92px);line-height:1;text-wrap:balance;max-width:14ch}
+.cta-band .lede{text-align:center;max-width:40ch}
+.detail{display:grid;gap:44px}
+.detail-main > * + *{margin-top:72px}
+.bookcard{padding:28px;display:grid;gap:14px}
+.bookcard h3{font-size:30px}
+.bookcard .btn{width:100%}
+.bookcard .list li{font-size:15px;padding:14px 0}
+@media (min-width:1000px){.detail{grid-template-columns:minmax(0,1fr) 360px;gap:72px;align-items:start}.detail aside{position:sticky;top:96px}}
+.ph-note{padding:clamp(28px,4vw,48px);border:1px dashed rgba(228,194,140,.42);border-radius:24px;display:grid;gap:12px;max-width:760px}
+.ph-note p{margin:0;color:var(--mute)}
+.nav-cta .long{display:none}
+@media (min-width:1000px){.nav-cta .long{display:inline}.nav-cta .short{display:none}}
+@media (min-width:1000px){.band{align-items:stretch}.band > .media{aspect-ratio:auto;height:100%;min-height:460px}}
+@media (min-width:1000px){.band.daygrid{grid-template-columns:1fr 1.5fr;align-items:start}.band.daygrid > .media{height:auto;aspect-ratio:4/5;min-height:0;position:sticky;top:96px}}
 </style>
 </head>
 <body>
@@ -573,15 +644,15 @@ body.is-home #water,body.is-lux #water{opacity:.34}
   <div class="nav-in">
     <a href="#/" class="mark" aria-label="Lorenzo Fanelli, home">Lorenzo Fanelli</a>
     <nav class="nav-links" aria-label="Main">
-      <a href="#/method">Method</a><a href="#/packages">Coaching</a><a href="#/private">Private</a><a href="#/gallery">Gallery</a><a href="#/about">About</a>
+      <a href="#/packages">Coaching</a><a href="#/private">Private</a><a href="#/about">About</a><a href="#/faq">FAQ</a>
     </nav>
-          <a class="btn nav-cta" href="#/book">Book</a>
+          <a class="btn nav-cta" href="#/book"><span class="short">Book</span><span class="long">Book a consultation</span></a>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span></button>
   </div>
 </header>
 
 <div class="menu" id="menu" aria-hidden="true">
-  <a href="#/method">Method</a><a href="#/app">How it works</a><a href="#/packages">Coaching</a><a href="#/private">Private</a><a href="#/gallery">Gallery</a><a href="#/about">About</a><a href="#/faq">FAQ</a><a href="#/book">Book</a>
+  <a href="#/packages">Coaching</a><a href="#/private">Private</a><a href="#/about">About</a><a href="#/faq">FAQ</a><a href="#/method">Method</a><a href="#/contact">Contact</a><a href="#/book">Book a consultation</a>
   <small>Coaching and nutrition, worldwide. <span data-ig-text>@lorefanecoach</span></small>
 </div>
 
@@ -592,8 +663,8 @@ body.is-home #water,body.is-lux #water{opacity:.34}
     <div class="foot-mark">Lorenzo Fanelli</div>
     <p class="mute" style="margin-top:14px;max-width:32ch">Coaching and nutrition. Online and in person, worldwide.</p>
     <div class="foot-grid">
-      <div><a href="#/method">Method</a><a href="#/app">How it works</a><a href="#/packages">Coaching</a><a href="#/private">Private</a></div>
-      <div><a href="#/gallery">Gallery</a><a href="#/book">Book</a><a href="#/faq">FAQ</a><a href="#/about">About</a><a href="#/contact">Contact</a><a data-ig-href href="https://instagram.com/lorefanecoach" target="_blank" rel="noopener">Instagram</a></div>
+      <div><a href="#/packages">Coaching</a><a href="#/packages/consult">Consult</a><a href="#/packages/coaching">Monthly coaching</a><a href="#/private">Private</a></div>
+      <div><a href="#/book">Book a consultation</a><a href="#/about">About</a><a href="#/method">Method</a><a href="#/faq">FAQ</a><a href="#/contact">Contact</a><a data-ig-href href="https://instagram.com/lorefanecoach" target="_blank" rel="noopener">Instagram</a></div>
     </div>
     <div class="foot-base">
       <span>Clients worldwide</span>
@@ -608,7 +679,7 @@ body.is-home #water,body.is-lux #water{opacity:.34}
 
 <script>
 /* ---------- photos (Lorenzo's shoot) ---------- */
-const IMG={"hero_m": "images/hero_m.jpg", "hero_d": "images/hero_d.jpg", "about": "images/about.jpg", "coach": "images/coach.jpg", "white": "images/white.jpg", "back": "images/back.jpg", "pool_p": "images/pool_p.jpg", "pool_m": "images/pool_m.jpg", "pool_w": "images/pool_w.jpg", "group_w": "images/group_w.jpg", "group_pan": "images/group_pan.jpg"};
+const IMG={};
 const PHOTO=(m,d,alt,cls)=>`<div class="photo-bg ${cls||''}" aria-hidden="${alt?'false':'true'}"><img class="pm" src="${IMG[m]}" alt="${alt||''}"><img class="pd" src="${IMG[d||m]}" alt=""></div>`;
 
 /* ---------- config: prices, contact ---------- */
@@ -622,7 +693,7 @@ let SHOW_PRIVATE_PRICE = false;      // flip to true once the range is confirmed
 let PRIVATE_RANGE = '$10,000 to $20,000';
 let IG = 'lorefanecoach';
 let NOT_CLOSE = 'It is a routine built around a purpose, and kept.';
-const CREDS = [['MSc','Nutrition'],['BSc','Sports sciences'],['6+ years','Coaching'],['Your doctors','Worked alongside']];
+const CREDS = [['MSc','Nutrition'],['BSc','Sports sciences'],['200+','People coached to their goals'],['Your doctors','Worked alongside']];
 const MAIL = ['lal.lorenzofanelli','gmail.com'];   // assembled at runtime so scrapers can't read it
 const mailAddr = () => MAIL.join('@');
 
@@ -862,97 +933,167 @@ const proofHTML=()=>`<section class="sec wrap proof">
   <div class="creds">${CREDS.map(c=>`<div class="glass"><b>${c[0]}</b><small>${c[1]}</small></div>`).join('')}</div>
 </section>`;
 
+/* ---------- media placeholders: labelled spaces for future photos and videos ---------- */
+const ICON={
+  video:'<svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="none" stroke="currentColor" stroke-opacity=".6"/><path d="M14 11.5v11l9-5.5z" fill="currentColor"/></svg>',
+  photo:'<svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="none" stroke="currentColor" stroke-opacity=".6"/><rect x="10" y="12" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="17" cy="17" r="2.6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>'
+};
+const MEDIA=(kind,text,spec,cls)=>`<figure class="media ${cls||'r169'}" role="img" aria-label="Placeholder for a ${kind}: ${text.replace(/"/g,'')}">
+  <div class="media-in"><span class="media-tag">${ICON[kind]}${kind==='video'?'Video':'Photo'}${spec?' · '+spec:''}</span><p>${text}</p></div>
+</figure>`;
+
+const OFFER={
+  consult:{tag:'Start here',bul:['One hour, online or in person','A four-week training plan','A four-week nutrition plan'],href:'#/packages/consult'},
+  coaching:{tag:'Ongoing',bul:['Eight sessions a month, live or online','Guidance between sessions','Progress tracked in the app'],href:'#/packages/coaching'},
+  private:{tag:'Go further',bul:['10, 20 or 30 days at your home','Advanced testing, all included','By application'],href:'#/private'}
+};
+const offerCard=(k,feature)=>{const o=OFFER[k],p=PKG[k];return `<article class="offer glass${feature?' feature':''}">
+  <span class="tag">${o.tag}</span><h3>${p.name}</h3><p class="line">${p.line}</p>
+  <ul>${o.bul.map(x=>`<li>${x}</li>`).join('')}</ul>
+  <div class="row">${k==='private'?`<a class="btn" href="#/private">Discover Private</a>`:`<a class="btn${k==='consult'?' fill':''}" href="${o.href}">View details</a>`}</div>
+</article>`};
+const HOW=[
+  ['Book a consultation','One hour, online or in person, on your goals, routine, history and preferences.'],
+  ['Get your plan','Four weeks of training and nutrition, written for you and delivered to the app.'],
+  ['Train with the coach','Eight sessions a month, live or online, with guidance between sessions.'],
+  ['Adjust as life moves','Weekly check-ins keep the plan in step with travel, work and results.']
+];
+const howHTML=(n)=>`<ol class="how ${n===3?'three':'four'}">${HOW.slice(0,n||4).map(h=>`<li class="glass"><b>${h[0]}</b><p>${h[1]}</p></li>`).join('')}</ol>`;
+const ctaBand=(h,l)=>`<section class="wrap cta-band">
+  <h2>${h||'Start with one conversation.'}</h2>
+  <p class="lede">${l||'Every plan begins with a one hour consultation, online or in person.'}</p>
+  <div class="row" style="justify-content:center"><a class="btn fill" href="#/book">Book a consultation</a><a class="btn" href="#/packages">Explore coaching</a></div>
+</section>`;
+const QPH=[
+  ['A client on the result they reached, in their own words.','Name or role, age and city, with permission'],
+  ['A client on what changed day to day: energy, sleep, food, travel.','Name or role, age and city, with permission'],
+  ['A physician who works alongside the coach, on the approach.','Name and specialty, with permission']
+];
+
 V.home = () => `
-<section class="hero wrap">
-  ${PHOTO('hero_m','hero_d','Lorenzo training outdoors','bleed')}
-  <h1 class="load d1"><span>Lorenzo</span><span>Fanelli</span></h1>
-  <p class="lede load d2">Coaching and nutrition, built around the life you actually live.</p>
-  <div class="row load d3"><a class="btn fill" href="#/book">Book a consultation</a><a class="btn" href="#/packages">See coaching</a></div>
-  <div class="hero-meta load d4"><span>Coaching and nutrition</span><span>Works alongside your doctors</span></div>
+<section class="wrap hero2">
+  <div>
+    <p class="eyebrow load d1">Coaching and nutrition · Worldwide</p>
+    <h1 class="load d1">Coaching and nutrition, built around your life.</h1>
+    <p class="lede load d2">A plan written for you, a coach who adjusts it with you, and the support to keep it going.</p>
+    <div class="row load d3"><a class="btn fill" href="#/packages">Explore coaching</a><a class="btn" href="#/book">Book a consultation</a></div>
+    <div class="proofline load d4"><span><b>200+</b> people coached to their goals</span><span><b>MSc</b> Nutrition</span><span>Works alongside your doctors</span></div>
+  </div>
+  <div class="load d3">${MEDIA('video','Me coaching a client through a heavy lift outdoors at golden hour. Close, calm, no logos.','10 to 15 second loop, no sound','r45')}</div>
+</section>
+
+<section class="sec wrap">
+  <div class="sec-h two">
+    <div><p class="eyebrow">Coaching</p><h2 style="margin-top:14px">Two ways to start.</h2></div>
+    <p class="lede">Begin with a single consultation, or go straight into monthly coaching. Both start with one conversation.</p>
+  </div>
+  <div class="offers two">${offerCard('consult')}${offerCard('coaching')}</div>
+  <div style="margin-top:56px">${howHTML(3)}</div>
+  <div class="row" style="margin-top:36px"><a class="btn fill" href="#/packages">Explore coaching</a><a class="link" href="#/book">Or book a consultation</a></div>
+</section>
+
+<section class="sec wrap">
+  <div class="band">
+    ${MEDIA('video','A private client\'s home at sunrise. Me setting up the day\'s session on the terrace while breakfast is prepared inside.','20 to 30 seconds, wide','r169 tall-m')}
+    <div>
+      <p class="eyebrow">Private</p>
+      <h2>The whole routine, rebuilt at your home.</h2>
+      <p class="lede">A fully immersive deep dive, anywhere in the world. Training, food, sleep and recovery, worked on together until the routine holds on its own.</p>
+      <div class="dayset"><span>10<small>days</small></span><span>20<small>days</small></span><span>30<small>days</small></span></div>
+      <p class="testline">Blood work · VO2 max · Continuous glucose · DEXA. <b>Every test included.</b></p>
+      <div class="row" style="margin-top:32px"><a class="btn fill" href="#/private">Discover Private</a><a class="link" href="#/apply">Request Private</a></div>
+    </div>
+  </div>
 </section>
 
 ${notHTML()}
 
 <section class="sec wrap">
-  <h2>Three ways to work together.</h2>
-  <div class="pkgs">${pkgCard('consult')}${pkgCard('coaching')}${pkgCard('private')}</div>
-  <p class="one-line">A plan. A coach. A coach at home.</p>
+  <div class="sec-h"><p class="eyebrow">Client words</p><h2 style="margin-top:14px">In their words.</h2></div>
+  <div class="qgrid">${TESTIMONIALS.length?TESTIMONIALS.map(t=>`<blockquote class="qph" style="border-style:solid"><p style="color:var(--ink)">${t.quote}</p><cite>${t.who}</cite></blockquote>`).join(''):QPH.map(q=>`<div class="qph"><span class="media-tag">Quote</span><p>${q[0]}</p><cite>${q[1]}</cite></div>`).join('')}</div>
 </section>
-
-<section class="private">
-  ${PHOTO('pool_m','pool_w','','fill')}
-  <div class="wrap">
-    <h2>Private.<br>The whole routine, in person.</h2>
-    <div class="days"><span>10<small>days</small></span><span>20<small>days</small></span><span>30<small>days</small></span></div>
-    <p class="lede" style="margin-top:28px">Blood work, VO2 max, glucose and DEXA, reviewed with your doctors. Then every part of the day, done together, at your home.</p>
-    <div class="row" style="margin-top:28px"><a class="btn" href="#/private">Discover Private</a></div>
-  </div>
-</section>
-
-${proofHTML()}
 
 <section class="sec wrap">
-  <div class="split">
-    <figure class="portrait"><img src="${IMG.coach}" alt="Lorenzo on the training floor"></figure>
-    <div class="stack"><h2>Start with one conversation.</h2>
-      <p class="mute">Every plan begins with a one hour consultation, on where you are and where you want to be.</p>
-      <div class="row"><a class="btn fill" href="#/book">Book a consultation</a></div>
+  <div class="band flip">
+    ${MEDIA('video','Me introducing myself to camera: who I coach, how I work, and what a first consultation looks like.','30 to 45 seconds, with sound and subtitles','r169 tall-m')}
+    <div>
+      <p class="eyebrow">Meet Lorenzo</p>
+      <h2>Coaching for the other 23 hours.</h2>
+      <p class="lede">More than 200 people coached to their goals, in person and online, with nutrition, training, sleep and recovery treated as one plan.</p>
+      <div class="creds" style="grid-template-columns:repeat(2,1fr)">${CREDS.map(c=>`<div class="glass"><b>${c[0]}</b><small>${c[1]}</small></div>`).join('')}</div>
+      <div class="row" style="margin-top:28px"><a class="btn" href="#/about">About Lorenzo</a></div>
     </div>
   </div>
-</section>`;
+</section>
 
-function pkgCard(k){const p=PKG[k];return `
-<a class="pkg glass" href="#/${k==='private'?'private':'packages/'+k}">
-  <h3>${p.name}</h3>
-  <p class="pkg-line">${p.line}</p>
-  <span class="go">${k==='private'?'Discover Private':'View details'}</span>
-</a>`}
+${ctaBand()}`;
 
 V.packages = () => `
-<section class="page-top wrap">
-  <h1>Coaching</h1>
-  <p class="lede">Coaching and nutrition, three ways. Every one starts with a consultation.</p>
+<section class="wrap hero2" style="min-height:auto">
+  <div>
+    <p class="eyebrow">Coaching</p>
+    <h1>Coaching and nutrition, written for you.</h1>
+    <p class="lede">Start with one consultation. Stay for monthly coaching. Go further with Private.</p>
+    <div class="row"><a class="btn fill" href="#/book">Book a consultation</a><a class="btn" href="#options">Compare options</a></div>
+  </div>
+  ${MEDIA('photo','Me mid-session with a client, cueing a movement. Both in focus, natural light, no logos.','landscape','r169 tall-m')}
 </section>
-<section class="sec wrap" style="padding-top:0">
-  <div class="pkgs" style="margin-top:0">${pkgCard('consult')}${pkgCard('coaching')}${pkgCard('private')}</div>
-  <p class="one-line">A plan. A coach. A coach at home.</p>
-</section>
-${aiHTML()}
-<section class="sec wrap"><p class="mute">Questions first? <a class="link" href="#/faq">Read the FAQ</a></p></section>`;
 
+<section class="sec wrap" id="options" style="scroll-margin-top:90px">
+  <div class="sec-h two"><h2>Choose where to start.</h2><p class="lede">Every option begins with a one hour consultation. Prices are confirmed at booking.</p></div>
+  <div class="offers three">${offerCard('consult')}${offerCard('coaching')}${offerCard('private',true)}</div>
+</section>
+
+<section class="sec wrap">
+  <div class="sec-h"><h2>How it works.</h2></div>
+  ${howHTML(4)}
+</section>
+
+${phonesHTML()}
+
+<section class="sec wrap">
+  <div class="sec-h two"><h2>Before you book.</h2><p class="lede"><a class="link" href="#/faq">All questions</a></p></div>
+  ${faqHTML(FAQ.slice(0,4))}
+</section>
+
+${ctaBand('Ready when you are.')}`;
 
 const PHONE=[['today','Today'],['nutrition','Nutrition'],['session','Session'],['progress','Progress'],['checkin','Weekly check-in']];
 const phonesHTML=()=>`<section class="sec wrap">
-  <h2 ${H2}>On your phone.</h2>
-  <p class="lede" style="margin-top:14px">Your day, your food, every session and your progress, in one app.</p>
+  <div class="sec-h two"><h2>On your phone.</h2><p class="lede">Your day, your food, every session and your progress, in one app.</p></div>
   <div class="phones">${PHONE.map(x=>`<figure><div class="device"><div class="screen"><img src="images/app/${x[0]}.jpg" alt="Client app: ${x[1]}" loading="lazy" width="390" height="844"></div></div><figcaption>${x[1]}</figcaption></figure>`).join('')}</div>
   <p class="phones-note">Demo screens with sample data.</p>
 </section>`;
-V.detail = k => {const p=PKG[k];return `
-<section class="page-top wrap">
+
+const DETAIL_MEDIA={
+  consult:['photo','A consultation at a kitchen table: me listening, notebook open, the client talking through their week.','landscape'],
+  coaching:['video','A live online session: the client training at home on a laptop screen while I watch and cue.','15 to 20 seconds, no sound']
+};
+V.detail = k => {const p=PKG[k],m=DETAIL_MEDIA[k];return `
+<section class="page-top wrap" style="padding-block-end:40px">
   <a class="crumb" href="#/packages">Coaching</a>
   <h1>${p.name}</h1>
   <p class="lede">${p.line}</p>
-  <div class="row" style="margin-top:32px"><a class="btn fill" href="#/book">${k==='consult'?'Book your consultation':'Start with a consultation'}</a></div>
 </section>
-<section class="sec wrap" style="padding-top:24px">
-  <h2 ${H2}>Included.</h2>
-  <ul class="list" style="margin-top:28px">${p.items.map(i=>`<li><span>${i[0]}</span><span>${i[1]}</span></li>`).join('')}</ul>
+<section class="wrap" style="padding-bottom:96px">
+  <div class="detail">
+    <div class="detail-main">
+      ${MEDIA(m[0],m[1],m[2],'r169 tall-m')}
+      <div><h2 ${H2}>Included.</h2><ul class="list" style="margin-top:28px">${p.items.map(i=>`<li><span>${i[0]}</span><span>${i[1]}</span></li>`).join('')}</ul></div>
+      <div><h2 ${H2}>Who it's for.</h2><p class="lede" style="margin-top:20px;max-width:46ch">${p.who}</p></div>
+      <div><h2 ${H2}>How it works.</h2><ol class="steps" style="margin-top:28px;grid-template-columns:1fr">${p.how.map(s=>`<li class="glass"><b>${s[0]}</b><p>${s[1]}</p></li>`).join('')}</ol></div>
+    </div>
+    <aside class="bookcard glass">
+      <span class="eyebrow">${k==='consult'?'Start here':'Starts with a consultation'}</span>
+      <h3>${p.name}</h3>
+      <ul class="list"><li><span>Investment</span><span>${p.invest}</span></li><li><span>First step</span><span>One hour consultation</span></li><li><span>Where</span><span>Online or in person</span></li></ul>
+      <a class="btn fill" href="#/book">Book a consultation</a>
+      <a class="link" href="#/faq" style="justify-self:center;font-size:15px">Questions first</a>
+    </aside>
+  </div>
 </section>
 ${k==='coaching'?phonesHTML():''}
-<section class="sec wrap">
-  <div class="split"><h2 ${H2}>Who it's for.</h2><p class="lede">${p.who}</p></div>
-</section>
-<section class="sec wrap">
-  <h2 ${H2}>How it works.</h2>
-  <ol class="steps" style="margin-top:28px">${p.how.map(s=>`<li class="glass"><b>${s[0]}</b><p>${s[1]}</p></li>`).join('')}</ol>
-</section>
-${aiHTML()}
-<section class="sec wrap">
-  <ul class="list"><li><span>Investment</span><span>${p.invest}</span></li></ul>
-  <div class="row" style="margin-top:28px"><a class="btn fill" href="#/book">Book a consultation</a><a class="link" href="#/faq">Questions</a></div>
-</section>
-${k==='consult'?NEXT('#/packages/coaching','Want sessions every week?','Coaching'):NEXT('#/private','Go further','Private')}`};
+${k==='consult'?NEXT('#/packages/coaching','Want sessions every week?','Monthly coaching'):NEXT('#/private','Go further','Private')}`};
 
 /* ---------- private ---------- */
 const DAY=[
@@ -981,18 +1122,21 @@ const TRAVEL=[
 ];
 
 V.private = () => `
-<section class="lux-hero wrap">
-  ${PHOTO('pool_p','pool_w','An infinity pool above the Hong Kong skyline','bleed')}
-  <a class="crumb" href="#/packages">Coaching</a>
-  <h1>Private</h1>
-  <p class="lede">A fully immersive deep dive, at your home, anywhere in the world. Every part of the day is worked on together, until the routine holds on its own.</p>
-  <div class="dur"><span>10<small>days</small></span><span>20<small>days</small></span><span>30<small>days</small></span></div>
-  <div class="row" style="margin-top:32px"><a class="btn fill" href="#/apply">Request Private</a></div>
-  <p class="tests-line">Advanced blood work · VO2 max & RMR · Continuous glucose · DEXA. <b>Every test included.</b></p>
+<section class="wrap hero2" style="min-height:auto">
+  <div>
+    <a class="crumb" href="#/packages">Coaching</a>
+    <h1 style="font-size:clamp(64px,10vw,140px)">Private</h1>
+    <p class="lede">A fully immersive deep dive, at your home, anywhere in the world. Every part of the day is worked on together, until the routine holds on its own.</p>
+    <div class="dayset"><span>10<small>days</small></span><span>20<small>days</small></span><span>30<small>days</small></span></div>
+    <div class="row"><a class="btn fill" href="#/apply">Request Private</a></div>
+    <p class="testline">Advanced blood work · VO2 max & RMR · Continuous glucose · DEXA. <b>Every test included.</b></p>
+  </div>
+  ${MEDIA('video','Me in a kitchen, helping a client choose what to eat while looking through her pantry.','20 to 30 seconds, no sound','r45')}
 </section>
 
 <section class="chap wrap">
   <div class="chap-h"><h2>Measured, not estimated.</h2><p class="lede">The plan is built on your numbers, and read with your doctors. Every test is arranged for you and included.</p></div>
+  <div style="margin-bottom:40px">${MEDIA('photo','A blood draw at the client\'s home: calm, discreet, morning light. Hands and kit in frame, faces optional.','landscape','r219')}</div>
   <div class="feats">${TESTS.map(t=>`<div class="feat glass"><h3>${t[0]}</h3><p>${t[1]}</p></div>`).join('')}</div>
 </section>
 
@@ -1003,7 +1147,10 @@ V.private = () => `
 
 <section class="chap wrap">
   <div class="chap-h"><h2>A day inside it.</h2><p class="lede">Every part of the day, done together.</p></div>
-  <ul class="day">${DAY.map(d=>`<li><time>${d[0]}</time><b>${d[1]}</b><p>${d[2]}</p></li>`).join('')}</ul>
+  <div class="band daygrid">
+    ${MEDIA('photo','Me coaching a client during a beach workout, early morning.','portrait','r45')}
+    <ul class="day">${DAY.map(d=>`<li><time>${d[0]}</time><b>${d[1]}</b><p>${d[2]}</p></li>`).join('')}</ul>
+  </div>
 </section>
 
 <section class="chap wrap">
@@ -1030,19 +1177,17 @@ V.private = () => `
   </ul>
   <div class="row" style="margin-top:32px"><a class="btn fill" href="#/apply">Request Private</a></div>
 </section>
-${NEXT('#/gallery','See it in practice','Gallery')}`;
+${NEXT('#/packages','Prefer to start with a consultation?','Coaching')}`;
 
 V.method = () => `
 <section class="page-top wrap">
   <h1>Method</h1>
-  <p class="lede">Find the purpose. Define the goal. Understand the time. Build the route.</p>
+  <p class="lede">Coming soon.</p>
 </section>
-${notHTML()}
-<section class="sec wrap">
-  <ol class="stages">${STAGES.map((s,i)=>`<li><span class="n">${i+1}</span><h2>${s[0]}</h2><p class="lede">${s[1]}</p></li>`).join('')}</ol>
+<section class="sec wrap" style="padding-top:0">
+  <div class="ph-note"><span class="eyebrow">Placeholder</span><p>This page is being rewritten. New content will go here.</p></div>
 </section>
-<section class="sec wrap"><p class="close-line">The science stays in the background. What you see is a plan that fits.</p></section>
-${NEXT('#/app','Next','How it works')}`;
+${NEXT('#/packages','Meanwhile','Coaching')}`;
 
 V.faq = () => `
 <section class="page-top wrap">
@@ -1059,7 +1204,7 @@ V.about = () => `
 </section>
 <section class="sec wrap">
   <div class="split">
-    <figure class="portrait"><img src="${IMG.about}" alt="Lorenzo at sunset"></figure>
+    ${MEDIA('photo','Portrait of me in natural window light, plain background, looking at the camera.','portrait','r45')}
     <div class="stack mute"><h2 ${H2} style="color:var(--ink)">Coaching for the other 23 hours.</h2>
       <p>The work brings fitness and wellness together instead of focusing on one discipline. Eating well, sleeping well and strength training, shaped around real lives and real pressures.</p>
       <p>Clients include executives, founders, artists and public figures, mostly between 45 and 70, coached in person and online. The practice also supports post operative rehabilitation, including endometriosis recovery.</p>
@@ -1068,8 +1213,7 @@ V.about = () => `
   <div class="creds">
     <div class="glass"><b>MSc</b><small>Nutrition</small></div>
     <div class="glass"><b>BSc</b><small>Sports sciences</small></div>
-    <div class="glass"><b>6+ years</b><small>Coaching</small></div>
-    <div class="glass"><b>English</b><small>and Italian</small></div>
+    <div class="glass"><b>200+</b><small>People coached to their goals</small></div>
   </div>
 </section>
 <section class="sec wrap">
@@ -1079,23 +1223,9 @@ V.about = () => `
     <li><span>Instagram</span><span><a class="link" href="https://instagram.com/${IG}" target="_blank" rel="noopener">@${IG}</a></span></li>
   </ul>
 </section>
-${NEXT('#/method','Next','The method')}`;
+${NEXT('#/packages','Next','Coaching')}`;
 
-V.gallery = () => `
-<section class="page-top wrap">
-  <h1>Gallery</h1>
-  <p class="lede">Training, travel and the days in between. New work added as it happens.</p>
-</section>
-<section class="sec wrap" style="padding-top:0"><div class="gal" id="gal">${GALLERY.map(galTile).join('')}</div></section>
-${NEXT('#/private','Go further','Private')}`;
-function bindGallery(){
-  const g=document.getElementById('gal'); if(!g) return;
-  document.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{ /* no filters with a small set */
-    document.querySelectorAll('[data-g]').forEach(x=>x.setAttribute('aria-pressed',x===b));
-    g.querySelectorAll('figure').forEach(f=>f.style.display=(b.dataset.g==='All'||f.dataset.cat===b.dataset.g)?'':'none');
-  });
-  g.querySelectorAll('video').forEach(v=>{v.onmouseenter=()=>v.play();v.onmouseleave=()=>v.pause()});
-}
+function bindGallery(){}
 
 V.book = () => `
 <section class="page-top wrap" style="padding-block-end:32px">
@@ -1142,7 +1272,7 @@ V.notfound = () => `
 </section>`;
 
 /* ---------- app screens (Lorenzo's designs) ---------- */
-const SCREENS={"home": "images/screen_home.jpg", "coach": "images/screen_coach.jpg", "food": "images/screen_food.jpg"};
+const SCREENS={};
 const DEV=(k,cls,alt)=>`<div class="device ${cls||''}"><div class="screen"><img src="${SCREENS[k]}" alt="${alt||'A screen from the client app'}"></div></div>`;
 const FLOW=[
   ['Consult','One hour together on your goals, routine, history, and bloodwork if you have it.'],
@@ -1260,7 +1390,7 @@ function setBar(h){
   const c=(h==='/private'||h==='/gallery')?BAR.private:BAR.def;
   bar.innerHTML=`<p>${c[0]}<br><span style="color:var(--ink)">${c[1]}</span></p><a class="btn fill" href="${c[2]}">${c[3]}</a>`;
   const navc=document.querySelector('.nav-cta');
-  if(navc){navc.textContent=h==='/private'?'Request':'Book';navc.setAttribute('href',h==='/private'?'#/apply':'#/book')}
+  if(navc){const pv=h==='/private';navc.innerHTML=pv?'<span class="short">Request</span><span class="long">Request Private</span>':'<span class="short">Book</span><span class="long">Book a consultation</span>';navc.setAttribute('href',pv?'#/apply':'#/book')}
 }
 
 /* ---------- reading progress on long pages ---------- */
@@ -1283,10 +1413,10 @@ function route(){
   else if(h==='/packages/coaching') html=V.detail('coaching');
   else if(h==='/private') html=V.private();
   else if(h==='/method') html=V.method();
-  else if(h==='/app') html=V.app();
+  else if(h==='/app') html=V.packages();
   else if(h==='/enquire'||h==='/fit') html=V.contact();
   else if(h==='/faq') html=V.faq();
-  else if(h==='/gallery') html=V.gallery();
+  else if(h==='/gallery') {location.replace('#/');return}
   else if(h==='/book') html=V.book();
   else if(h==='/about') html=V.about();
   else if(h==='/contact') html=V.contact();

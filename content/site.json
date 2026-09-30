@@ -92,25 +92,12 @@
       "subtitle": "Sports sciences"
     },
     {
-      "title": "6+ years",
-      "subtitle": "Coaching"
+      "title": "200+",
+      "subtitle": "People coached to their goals"
     },
     {
       "title": "Your doctors",
       "subtitle": "Worked alongside"
     }
-  ],
-  "photos": {
-    "hero_m": "images/hero_m.jpg",
-    "hero_d": "images/hero_d.jpg",
-    "about": "images/about.jpg",
-    "coach": "images/coach.jpg",
-    "white": "images/white.jpg",
-    "back": "images/back.jpg",
-    "pool_p": "images/pool_p.jpg",
-    "pool_m": "images/pool_m.jpg",
-    "pool_w": "images/pool_w.jpg",
-    "group_w": "images/group_w.jpg",
-    "group_pan": "images/group_pan.jpg"
-  }
+  ]
 }
