@@ -634,6 +634,54 @@ body.is-home .nav:not(.solid) .mark{opacity:1}
 @media (min-width:1000px){.nav-cta .long{display:inline}.nav-cta .short{display:none}}
 @media (min-width:1000px){.band{align-items:stretch}.band > .media{aspect-ratio:auto;height:100%;min-height:460px}}
 @media (min-width:1000px){.band.daygrid{grid-template-columns:1fr 1.5fr;align-items:start}.band.daygrid > .media{height:auto;aspect-ratio:4/5;min-height:0;position:sticky;top:96px}}
+
+/* v13: review fixes */
+.ready .load{transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.ready .load.d1{transition-delay:0s}.ready .load.d2{transition-delay:.08s}.ready .load.d3{transition-delay:.16s}.ready .load.d4{transition-delay:.24s}
+.hero2 h1{font-size:clamp(44px,5.4vw,84px)}
+@media (min-width:1000px){.hero2{min-height:auto;padding-block:132px 72px}}
+.crumb{font-size:15px;color:var(--ink);display:inline-flex;align-items:center;gap:10px}
+.crumb::before{content:"";width:8px;height:8px;border-left:1.5px solid var(--gold-ink);border-bottom:1.5px solid var(--gold-ink);transform:rotate(45deg)}
+.crumb:hover{color:var(--gold-ink)}
+.field input,.field textarea,.field select{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;padding:13px 14px;font-size:16px}
+.field input::placeholder,.field textarea::placeholder{color:var(--faint)}
+.fmt{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:22px}
+.fmt > span{font-size:14px;color:var(--mute)}
+.seg2{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px}
+.seg2 button{height:38px;padding:0 16px;border-radius:999px;border:0;background:transparent;color:var(--mute);font:inherit;font-size:15px;cursor:pointer}
+.seg2 button[aria-pressed="true"]{background:var(--gold);color:var(--on-gold)}
+.due{display:flex;justify-content:space-between;font-size:15px;color:var(--mute);padding-bottom:6px}
+.due b{color:var(--ink);font-weight:500}
+.paynote{font-size:14px;color:var(--mute);margin:4px 0 18px;line-height:1.5}
+@media (min-width:1000px){.book{grid-template-columns:1fr 1fr;align-items:stretch}.cal,.slots{height:100%}}
+.dayset span{border:0;border-left:1px solid var(--line);border-radius:0;text-align:left;padding:2px 22px;max-width:none;flex:0 0 auto}
+.dayset span:first-child{border-left:0;padding-left:0}
+@media (min-width:760px){.list,.next{max-width:none}}
+.chap .list{max-width:none}
+.faq-wide .faq{max-width:none}
+.faq details p{color:rgba(242,238,230,.82);font-size:17px;line-height:1.65}
+.faq summary{font-size:18px}
+.faq-page{display:grid;gap:40px}
+@media (min-width:1000px){.faq-page{grid-template-columns:1fr 2fr;gap:72px;align-items:start}.faq-side{position:sticky;top:110px}.faq-side .lede{margin:0}.faq-page .faq{margin-top:0}}
+.creds.creds3{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.foot-top{display:grid;gap:40px}
+@media (min-width:1000px){.foot-top{grid-template-columns:1.2fr 1fr;align-items:start}.foot-top .foot-grid{grid-template-columns:1fr 1fr;margin-top:0}}
+.nav .nav-cta{justify-content:center}
+@media (min-width:760px){.nav .nav-cta{min-width:118px}}
+@media (min-width:1000px){.nav .nav-cta{min-width:214px}}
+.device[data-zoom]{cursor:zoom-in}
+.device[data-zoom]:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+#zoom{position:fixed;inset:0;z-index:90;background:rgba(5,6,7,.94);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+#zoom.on{display:flex}
+#zoom img{max-height:92vh;max-width:100%;border-radius:28px;box-shadow:0 30px 90px rgba(0,0,0,.7)}
+.marquee{overflow:hidden;border-block:1px solid var(--line);padding-block:clamp(14px,2vw,22px);white-space:nowrap}
+.mq-track{display:inline-flex;animation:mq 60s linear infinite}
+.mq-track span{font-family:var(--serif);font-size:clamp(40px,7vw,104px);line-height:1;color:rgba(242,238,230,.16);padding-right:.3em}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.mq-track{animation:none}}
+.logos-ph{margin-top:14px;padding:22px 26px;border:1px dashed rgba(228,194,140,.38);border-radius:20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px}
+.logos-ph p{margin:0;color:var(--mute);font-size:15px}
+.logos-ph .media-tag{font-size:11px}
 </style>
 </head>
 <body>
@@ -660,14 +708,18 @@ body.is-home .nav:not(.solid) .mark{opacity:1}
 
 <footer>
   <div class="wrap">
+    <div class="foot-top"><div>
     <div class="foot-mark">Lorenzo Fanelli</div>
     <p class="mute" style="margin-top:14px;max-width:32ch">Coaching and nutrition. Online and in person, worldwide.</p>
+    <a class="btn fill" href="#/book" style="margin-top:28px">Book a consultation</a>
+    </div>
     <div class="foot-grid">
       <div><a href="#/packages">Coaching</a><a href="#/packages/consult">Consult</a><a href="#/packages/coaching">Monthly coaching</a><a href="#/private">Private</a></div>
       <div><a href="#/book">Book a consultation</a><a href="#/about">About</a><a href="#/method">Method</a><a href="#/faq">FAQ</a><a href="#/contact">Contact</a><a data-ig-href href="https://instagram.com/lorefanecoach" target="_blank" rel="noopener">Instagram</a></div>
     </div>
+    </div>
     <div class="foot-base">
-      <span>Clients worldwide</span>
+      <span>© 2026 Lorenzo Fanelli</span><span>Coaching and nutrition · Clients worldwide</span>
     </div>
   </div>
 </footer>
@@ -717,10 +769,10 @@ const PKG = {
     ]
   },
   coaching:{
-    name:'Coaching', line:'Eight sessions a month. A plan that moves with you.',
+    name:'Monthly coaching', line:'Eight sessions a month. A plan that moves with you.',
     invest:'Monthly, confirmed after your consultation',
     items:[
-      ['Sessions','Eight sessions a month, live or online'],
+      ['Sessions','Eight sessions a month, in person or online'],
       ['Homework','Training and nutrition guidance between sessions'],
       ['Dashboard','Pro access, shared with the coach'],
       ['Between sessions','An AI coach trained by Lorenzo, included']
@@ -728,7 +780,7 @@ const PKG = {
     who:'For people who want coaching every week, and a plan that changes when life does.',
     how:[
       ['Start','Every coaching plan begins with a one hour consultation.'],
-      ['Train','Eight sessions a month, live or online.'],
+      ['Train','Eight sessions a month, in person or online.'],
       ['Share','Training, food and results live in the dashboard, so every session starts from real data.']
     ]
   },
@@ -859,7 +911,7 @@ function renderBook(){
     const d=new Date(BK.date+'T12:00');
     const nice=d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
     el.innerHTML=`<div class="form glass" style="grid-column:1/-1"><div class="done"><h3>Request sent.</h3>
-      <p class="mute">${nice} at ${BK.time}, your time. A confirmation and payment link will follow by email.${BK.ref?' As a referral, you will be offered a priority call.':''}</p>
+      <p class="mute">${nice} at ${BK.time}, your time, ${(BK.fmt||'Online').toLowerCase()}. Your time is held, not yet confirmed. The coach confirms by email with a payment link for ${PRICE.consult}.${BK.ref?' As a referral, you will be offered a priority call.':''}</p>
       <div class="row" style="margin-top:28px"><a class="btn" href="#/packages/consult">What's included</a><a class="link" href="#/">Back home</a></div></div></div>`;
     return;
   }
@@ -883,16 +935,21 @@ function renderBook(){
     <p class="mute" style="font-size:14px">Times shown in your time zone${tz?', '+tz:''}.</p>
     ${sel?`<div class="slot-grid">${SLOTS.map(s=>`<button type="button" data-t="${s}" ${slotOpen(sel,s)?'':'disabled'} aria-pressed="${BK.time===s}">${s}</button>`).join('')}</div>`:'<p class="mute" style="margin-top:18px">Open days are outlined. Crossed out days are fully booked.</p>'}
     ${sel&&BK.time?`
-      <div class="book-sum"><span><b>First consultation</b>One hour</span><span>${PRICE.consult}</span></div>
+      <div class="fmt" role="group" aria-label="Where"><span>Where</span><div class="seg2"><button type="button" data-fmt="Online" aria-pressed="${(BK.fmt||'Online')==='Online'}">Online</button><button type="button" data-fmt="In person" aria-pressed="${BK.fmt==='In person'}">In person</button></div></div>
+      <div class="book-sum"><span><b>First consultation</b>One hour · ${BK.fmt||'Online'}</span><span>${PRICE.consult}</span></div>
+      <div class="due"><span>Due today</span><b>$0</b></div>
+      <p class="paynote">The coach confirms your time by email, with a payment link for ${PRICE.consult}. Nothing is charged until then.</p>
       <label class="field"><span>Name</span><input id="bkn" autocomplete="name" value="${esc(BK.name)}"><em class="err">Add your name.</em></label>
       <label class="field"><span>Email</span><input id="bke" type="email" autocomplete="email" value="${esc(BK.email)}"><em class="err">Add a valid email.</em></label>
       <label class="field"><span>Referred by a client? Optional</span><input id="bkr" placeholder="Their name" value="${esc(BK.ref||'')}"></label>
-      <button type="button" class="btn fill" id="bkgo" style="width:100%;margin-top:8px">Request ${BK.time}</button>`:''}
+      <button type="button" class="btn fill" id="bkgo" style="width:100%;margin-top:8px">Request ${BK.time} consultation</button>`:''}
   </div>`;
   el.querySelector('.pv').onclick=()=>{BK.view=new Date(y,m-1,1);renderBook()};
   el.querySelector('.nx').onclick=()=>{BK.view=new Date(y,m+1,1);renderBook()};
   el.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>{BK.date=b.dataset.d;BK.time=null;renderBook()});
   el.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{BK.time=b.dataset.t;renderBook();const n=document.getElementById('bkn');if(n&&matchMedia('(max-width:759px)').matches)n.scrollIntoView({block:'center',behavior:'smooth'})});
+  el.querySelectorAll('[data-fmt]').forEach(b=>b.onclick=()=>{BK.fmt=b.dataset.fmt;renderBook()});
+  [['bkn','name'],['bke','email'],['bkr','ref']].forEach(([id,k])=>{const i=document.getElementById(id);if(i)i.oninput=()=>{BK[k]=i.value}});
   const go=document.getElementById('bkgo');
   if(go) go.onclick=()=>{const n=document.getElementById('bkn'),e=document.getElementById('bke');let ok=true;
     [n,e].forEach(x=>x.closest('.field').classList.remove('bad'));
@@ -944,7 +1001,7 @@ const MEDIA=(kind,text,spec,cls)=>`<figure class="media ${cls||'r169'}" role="im
 
 const OFFER={
   consult:{tag:'Start here',bul:['One hour, online or in person','A four-week training plan','A four-week nutrition plan'],href:'#/packages/consult'},
-  coaching:{tag:'Ongoing',bul:['Eight sessions a month, live or online','Guidance between sessions','Progress tracked in the app'],href:'#/packages/coaching'},
+  coaching:{tag:'Ongoing',bul:['Eight sessions a month, in person or online','Guidance between sessions','Progress tracked in the app'],href:'#/packages/coaching'},
   private:{tag:'Go further',bul:['10, 20 or 30 days at your home','Advanced testing, all included','By application'],href:'#/private'}
 };
 const offerCard=(k,feature)=>{const o=OFFER[k],p=PKG[k];return `<article class="offer glass${feature?' feature':''}">
@@ -955,14 +1012,14 @@ const offerCard=(k,feature)=>{const o=OFFER[k],p=PKG[k];return `<article class="
 const HOW=[
   ['Book a consultation','One hour, online or in person, on your goals, routine, history and preferences.'],
   ['Get your plan','Four weeks of training and nutrition, written for you and delivered to the app.'],
-  ['Train with the coach','Eight sessions a month, live or online, with guidance between sessions.'],
+  ['Train with the coach','Eight sessions a month, in person or online, with guidance between sessions.'],
   ['Adjust as life moves','Weekly check-ins keep the plan in step with travel, work and results.']
 ];
 const howHTML=(n)=>`<ol class="how ${n===3?'three':'four'}">${HOW.slice(0,n||4).map(h=>`<li class="glass"><b>${h[0]}</b><p>${h[1]}</p></li>`).join('')}</ol>`;
-const ctaBand=(h,l)=>`<section class="wrap cta-band">
+const ctaBand=(h,l,alt)=>`<section class="wrap cta-band">
   <h2>${h||'Start with one conversation.'}</h2>
   <p class="lede">${l||'Every plan begins with a one hour consultation, online or in person.'}</p>
-  <div class="row" style="justify-content:center"><a class="btn fill" href="#/book">Book a consultation</a><a class="btn" href="#/packages">Explore coaching</a></div>
+  <div class="row" style="justify-content:center"><a class="btn fill" href="#/book">Book a consultation</a><a class="btn" href="${alt?alt[0]:'#/packages'}">${alt?alt[1]:'Explore coaching'}</a></div>
 </section>`;
 const QPH=[
   ['A client on the result they reached, in their own words.','Name or role, age and city, with permission'],
@@ -981,6 +1038,8 @@ V.home = () => `
   </div>
   <div class="load d3">${MEDIA('video','Me coaching a client through a heavy lift outdoors at golden hour. Close, calm, no logos.','10 to 15 second loop, no sound','r45')}</div>
 </section>
+
+<div class="marquee" aria-hidden="true"><div class="mq-track"><span>Coaching · Nutrition · Private · Worldwide · </span><span>Coaching · Nutrition · Private · Worldwide · </span></div></div>
 
 <section class="sec wrap">
   <div class="sec-h two">
@@ -1009,6 +1068,7 @@ V.home = () => `
 <section class="sec wrap">
   <div class="sec-h"><p class="eyebrow">Client words</p><h2 style="margin-top:14px">In their words.</h2></div>
   <div class="qgrid">${TESTIMONIALS.length?TESTIMONIALS.map(t=>`<blockquote class="qph" style="border-style:solid"><p style="color:var(--ink)">${t.quote}</p><cite>${t.who}</cite></blockquote>`).join(''):QPH.map(q=>`<div class="qph"><span class="media-tag">Quote</span><p>${q[0]}</p><cite>${q[1]}</cite></div>`).join('')}</div>
+  <div class="logos-ph"><span class="media-tag">Logos</span><p>Brands, clubs, clinics or press you've worked with. Only with permission. 4 to 6 marks, all in one colour.</p></div>
 </section>
 
 <section class="sec wrap">
@@ -1052,17 +1112,18 @@ ${notHTML()}
 ${phonesHTML()}
 
 <section class="sec wrap">
-  <div class="sec-h two"><h2>Before you book.</h2><p class="lede"><a class="link" href="#/faq">All questions</a></p></div>
-  ${faqHTML(FAQ.slice(0,4))}
+  <div class="sec-h"><h2>Before you book.</h2></div>
+  <div class="faq-wide">${faqHTML(FAQ.slice(0,4))}</div>
+  <p style="margin-top:24px"><a class="link" href="#/faq">All questions</a></p>
 </section>
 
-${ctaBand('Ready when you are.')}`;
+${ctaBand('Ready when you are.','',['#/private','Discover Private'])}`;
 
 const PHONE=[['today','Today'],['nutrition','Nutrition'],['session','Session'],['progress','Progress'],['checkin','Weekly check-in']];
 const phonesHTML=()=>`<section class="sec wrap">
   <div class="sec-h two"><h2>On your phone.</h2><p class="lede">Your day, your food, every session and your progress, in one app.</p></div>
-  <div class="phones">${PHONE.map(x=>`<figure><div class="device"><div class="screen"><img src="images/app/${x[0]}.jpg" alt="Client app: ${x[1]}" loading="lazy" width="390" height="844"></div></div><figcaption>${x[1]}</figcaption></figure>`).join('')}</div>
-  <p class="phones-note">Demo screens with sample data.</p>
+  <div class="phones">${PHONE.map(x=>`<figure><div class="device" role="button" tabindex="0" data-zoom="images/app/${x[0]}.jpg" aria-label="Enlarge ${x[1]} screen"><div class="screen"><img src="images/app/${x[0]}.jpg" alt="Client app: ${x[1]}" loading="lazy" width="390" height="844"></div></div><figcaption>${x[1]}</figcaption></figure>`).join('')}</div>
+  <p class="phones-note">Demo screens with sample data. Select a screen to enlarge it.</p>
 </section>`;
 
 const DETAIL_MEDIA={
@@ -1124,7 +1185,7 @@ const TRAVEL=[
 V.private = () => `
 <section class="wrap hero2" style="min-height:auto">
   <div>
-    <a class="crumb" href="#/packages">Coaching</a>
+    <p class="eyebrow">Private</p>
     <h1 style="font-size:clamp(64px,10vw,140px)">Private</h1>
     <p class="lede">A fully immersive deep dive, at your home, anywhere in the world. Every part of the day is worked on together, until the routine holds on its own.</p>
     <div class="dayset"><span>10<small>days</small></span><span>20<small>days</small></span><span>30<small>days</small></span></div>
@@ -1194,7 +1255,12 @@ V.faq = () => `
   <h1>Questions</h1>
   <p class="lede">The practical side, answered.</p>
 </section>
-<section class="sec wrap" style="padding-top:0">${faqHTML(FAQ)}</section>
+<section class="sec wrap" style="padding-top:0">
+  <div class="faq-page">
+    <div class="faq-side"><p class="lede">Still have a question?</p><div class="row" style="margin-top:20px"><a class="btn fill" href="#/book">Book a consultation</a><a class="link" href="#/contact">Write to the team</a></div></div>
+    <div class="faq-wide">${faqHTML(FAQ)}</div>
+  </div>
+</section>
 ${NEXT('#/book','Ready?','Book a consultation')}`;
 
 V.about = () => `
@@ -1202,7 +1268,7 @@ V.about = () => `
   <h1>Lorenzo</h1>
   <p class="lede">Coaching and nutrition. Clients worldwide.</p>
 </section>
-<section class="sec wrap">
+<section class="sec wrap" style="padding-top:8px">
   <div class="split">
     ${MEDIA('photo','Portrait of me in natural window light, plain background, looking at the camera.','portrait','r45')}
     <div class="stack mute"><h2 ${H2} style="color:var(--ink)">Coaching for the other 23 hours.</h2>
@@ -1210,7 +1276,7 @@ V.about = () => `
       <p>Clients include executives, founders, artists and public figures, mostly between 45 and 70, coached in person and online. The practice also supports post operative rehabilitation, including endometriosis recovery.</p>
     </div>
   </div>
-  <div class="creds">
+  <div class="creds creds3">
     <div class="glass"><b>MSc</b><small>Nutrition</small></div>
     <div class="glass"><b>BSc</b><small>Sports sciences</small></div>
     <div class="glass"><b>200+</b><small>People coached to their goals</small></div>
@@ -1222,6 +1288,7 @@ V.about = () => `
     <li><span>Focus</span><span>Coaching and nutrition</span></li>
     <li><span>Instagram</span><span><a class="link" href="https://instagram.com/${IG}" target="_blank" rel="noopener">@${IG}</a></span></li>
   </ul>
+  <div class="row" style="margin-top:36px"><a class="btn fill" href="#/book">Book a consultation</a><a class="btn" href="#/packages">Explore coaching</a></div>
 </section>
 ${NEXT('#/packages','Next','Coaching')}`;
 
@@ -1229,9 +1296,9 @@ function bindGallery(){}
 
 V.book = () => `
 <section class="page-top wrap" style="padding-block-end:32px">
-  <a class="crumb" href="#/packages/consult">Consult</a>
+  <a class="crumb" href="#/packages">Coaching</a>
   <h1 style="font-size:clamp(48px,12vw,110px)">Book</h1>
-  <p class="lede">Your first consultation. One hour, online or in person. ${PRICE.consult}.</p>
+  <p class="lede">Your first consultation. One hour, online or in person. Every plan starts here, including monthly coaching.</p>
 </section>
 <section class="sec wrap" style="padding-top:0">${bookHTML()}</section>
 <section class="sec wrap"><p class="mute">Prefer to ask first? <a class="link" href="#/contact">Write to the team</a></p></section>`;
@@ -1248,7 +1315,7 @@ V.contact = () => `
     <div id="cbody">
       <label class="field"><span>Name</span><input name="name" autocomplete="name" required><em class="err">Add your name.</em></label>
       <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" required><em class="err">Add a valid email.</em></label>
-      <label class="field"><span>Interested in</span><select name="topic"><option>Consult</option><option>Coaching</option><option>Private</option><option>Referred by a client</option><option>Something else</option></select></label>
+      <label class="field"><span>Interested in</span><select name="topic"><option>Consult</option><option>Monthly coaching</option><option>Private</option><option>Referred by a client</option><option>Something else</option></select></label>
       <label class="field"><span>Message</span><textarea name="msg" required></textarea><em class="err">Write a short message.</em></label>
       <div class="form-foot"><span class="mute" style="font-size:14px">Replies within 48 hours</span><button class="btn fill" type="submit">Send message</button></div>
     </div>
@@ -1428,7 +1495,7 @@ function route(){
     document.body.classList.toggle('is-home',key==='home');
     document.body.classList.toggle('is-lux',h==='/private');
     document.getElementById('bar').classList.toggle('hide',['/apply','/contact','/fit','/enquire','/book'].includes(h));
-    document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+h));
+    const sect=h.indexOf('/packages')===0?'/packages':(h==='/apply'?'/private':h);document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+sect));
     window.scrollTo(0,0);
     renderApply(); bindContact(); bindEnquire(); renderBook(); bindGallery(); setBar(h); syncTheme(); onRead();
     view.classList.remove('out');
@@ -1438,6 +1505,13 @@ function route(){
   }, view.innerHTML ? 260 : 0);
 }
 window.addEventListener('hashchange',route);
+(function(){const z=document.createElement('div');z.id='zoom';z.setAttribute('role','dialog');z.setAttribute('aria-modal','true');z.setAttribute('aria-label','Enlarged screen');z.innerHTML='<img alt="">';document.body.appendChild(z);
+  const img=z.querySelector('img');let last=null;
+  const open=d=>{last=d;img.src=d.dataset.zoom;img.alt=d.getAttribute('aria-label')||'';z.classList.add('on');document.body.style.overflow='hidden'};
+  const close=()=>{z.classList.remove('on');document.body.style.overflow='';if(last)last.focus()};
+  document.addEventListener('click',e=>{const d=e.target.closest('[data-zoom]');if(d)open(d)});
+  document.addEventListener('keydown',e=>{const d=e.target.closest&&e.target.closest('[data-zoom]');if(d&&(e.key==='Enter'||e.key===' ')){e.preventDefault();open(d)}if(e.key==='Escape'&&z.classList.contains('on'))close()});
+  z.onclick=close;})();
 
 /* nav + menu */
 const nav=document.getElementById('nav');
