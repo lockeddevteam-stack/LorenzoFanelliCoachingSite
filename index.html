@@ -1006,8 +1006,6 @@ V.home = () => `
   </div>
 </section>
 
-${notHTML()}
-
 <section class="sec wrap">
   <div class="sec-h"><p class="eyebrow">Client words</p><h2 style="margin-top:14px">In their words.</h2></div>
   <div class="qgrid">${TESTIMONIALS.length?TESTIMONIALS.map(t=>`<blockquote class="qph" style="border-style:solid"><p style="color:var(--ink)">${t.quote}</p><cite>${t.who}</cite></blockquote>`).join(''):QPH.map(q=>`<div class="qph"><span class="media-tag">Quote</span><p>${q[0]}</p><cite>${q[1]}</cite></div>`).join('')}</div>
@@ -1038,6 +1036,8 @@ V.packages = () => `
   </div>
   ${MEDIA('photo','Me mid-session with a client, cueing a movement. Both in focus, natural light, no logos.','landscape','r169 tall-m')}
 </section>
+
+${notHTML()}
 
 <section class="sec wrap" id="options" style="scroll-margin-top:90px">
   <div class="sec-h two"><h2>Choose where to start.</h2><p class="lede">Every option begins with a one hour consultation. Prices are confirmed at booking.</p></div>
